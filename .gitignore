@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.git-credentials
+.gitconfig
+
 # C extensions
 *.so
 .gitconfig
