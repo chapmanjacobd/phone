@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 .lesshst
-
+.bash_history
 .git-credentials
 .gitconfig
 
