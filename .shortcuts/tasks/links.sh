@@ -4,7 +4,7 @@ SD=/storage/7728-84FA
 URLS=( $(head -3 $SD/d/00_Metadata/tabs.txt) )
 for url in $URLS; do
   echo $url
-  am start --user 0 -a android.intent.action.VIEW -d $url &
+  exec am start --user 0 -a android.intent.action.VIEW -d $url &
   sleep 1
 done
 
