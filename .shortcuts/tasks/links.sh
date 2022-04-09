@@ -1,9 +1,8 @@
 #!/bin/bash
 SD=/storage/7728-84FA
 
-for url in
-  ( $(head -2 $SD/d/00_Metadata/tabs.txt) )
-; do
+URLS=( $(head -2 $SD/d/00_Metadata/tabs.txt) )
+for url in $URLS; do
   termux-open-url $url &
 done
 
