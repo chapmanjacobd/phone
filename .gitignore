@@ -7,6 +7,9 @@ __pycache__/
 .bash_history
 .git-credentials
 .gitconfig
+.local/share/fish/fish_history
+.local/share/fish/generated_completions/
+
 
 # C extensions
 *.so
