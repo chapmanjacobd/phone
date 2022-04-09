@@ -1,9 +1,7 @@
 #!/bin/bash
 SD=/storage/7728-84FA
 
-head -3 $SD/d/00_Metadata/tabs.txt
-
-URLS=( $(head -3 $SD/d/00_Metadata/tabs.txt) )
+URLS=$(head -3 $SD/d/00_Metadata/tabs.txt)
 echo $URLS
 for url in $URLS; do
   echo $url
