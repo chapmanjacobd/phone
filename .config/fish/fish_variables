@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
+SETUVAR _fish_abbr_op:termux\x2dopen
 SETUVAR _fish_abbr_wip:git\x20add\x20\x2e\x3bgit\x20commit\x20\x2dm\x20wip\x3bgit\x20pull\x3bgit\x20push
 SETUVAR fish_color_autosuggestion:555
 SETUVAR fish_color_cancel:\x2d\x2dreverse
