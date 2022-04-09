@@ -34,8 +34,8 @@ rm -rf $SD/Movies/.thumbnails/
 rm -rf $SD/Music/.thumbnails/
 
 
-
 find /sdcard/ -empty -type d -delete
-
 mkdir -p /sdcard/Pictures/
 mkdir -p /sdcard/Download/
+
+find $SD/ -empty -type d -delete
