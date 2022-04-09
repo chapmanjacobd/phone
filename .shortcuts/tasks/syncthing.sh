@@ -23,9 +23,17 @@ rm -rf '/sdcard/Music/Sound records/'
 
 mv /sdcard/Download/* $SD/31_Downloads/
 
-rm -rf /sdcard/Pictures/.thumbnails/
+
 rm -rf /sdcard/Pictures/Instagram/
+rm -rf /sdcard/Pictures/.thumbnails/
 rm -rf /sdcard/Movies/.thumbnails/
+rm -rf /sdcard/Music/.thumbnails/
+
+rm -rf $SD/Pictures/.thumbnails/
+rm -rf $SD/Movies/.thumbnails/
+rm -rf $SD/Music/.thumbnails/
+
+
 
 find /sdcard/ -empty -type d -delete
 
