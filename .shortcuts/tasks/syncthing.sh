@@ -1,41 +1,41 @@
 #!/bin/bash
 
-SD=/storage/7728-84FA/d
+INT=/sdcard
+SD=/storage/7728-84FA
 
-rm -rf /sdcard/Pictures/.thumbnails/
-rm -rf /sdcard/Pictures/Instagram/
-rm -rf /sdcard/Movies/.thumbnails/
+rm -rf $INT/Pictures/.thumbnails/
+rm -rf $INT/Pictures/Instagram/
+rm -rf $INT/Movies/.thumbnails/
 
-cp -R /sdcard/Pictures/Joey/* $SD/92_Memes/
-rm -rf /sdcard/Pictures/Joey/
+cp -R $INT/Pictures/Joey/* $SD/d/92_Memes/
+rm -rf $INT/Pictures/Joey/
 
-cp -R /sdcard/Pictures/Screenshots/* $SD/62_Tax_Photos/
-rm -rf /sdcard/Pictures/Screenshots/
+cp -R $INT/Pictures/Screenshots/* $SD/d/62_Tax_Photos/
+rm -rf $INT/Pictures/Screenshots/
 
-cp -R /sdcard/Pictures/* $SD/92_Memes/
-rm -rf /sdcard/Pictures/*
+cp -R $INT/Pictures/* $SD/d/92_Memes/
+rm -rf $INT/Pictures/*
 
-cp -R /sdcard/AudioRecorder/* $SD/84_Recordings/
-rm -rf /sdcard/AudioRecorder/
+cp -R $INT/AudioRecorder/* $SD/d/84_Recordings/
+rm -rf $INT/AudioRecorder/
 
-cp -R '/sdcard/Music/Sound records/'* $SD/84_Recordings/
-rm -rf '/sdcard/Music/Sound records/'
+cp -R $INT/Music/Sound\ records/* $SD/d/84_Recordings/
+rm -rf $INT/Music/Sound\ records/
 
-mv /sdcard/Download/* $SD/31_Downloads/
+mv $INT/Download/* $SD/d/31_Downloads/
 
+rm -rf $INT/Pictures/Instagram/
+rm -rf $INT/Pictures/.thumbnails/
+rm -rf $INT/Movies/.thumbnails/
+rm -rf $INT/Music/.thumbnails/
 
-rm -rf /sdcard/Pictures/Instagram/
-rm -rf /sdcard/Pictures/.thumbnails/
-rm -rf /sdcard/Movies/.thumbnails/
-rm -rf /sdcard/Music/.thumbnails/
+find $INT/ -empty -type d -delete
+mkdir -p $INT/Pictures/
+mkdir -p $INT/Download/
+
 
 rm -rf $SD/Pictures/.thumbnails/
 rm -rf $SD/Movies/.thumbnails/
 rm -rf $SD/Music/.thumbnails/
-
-
-find /sdcard/ -empty -type d -delete
-mkdir -p /sdcard/Pictures/
-mkdir -p /sdcard/Download/
 
 find $SD/ -empty -type d -delete
