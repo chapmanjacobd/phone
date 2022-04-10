@@ -10,6 +10,7 @@ __pycache__/
 .local/share/fish/fish_history
 .local/share/fish/generated_completions/
 .python_history
+.config/gcloud
 
 # C extensions
 *.so
