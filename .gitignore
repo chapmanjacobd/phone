@@ -9,7 +9,7 @@ __pycache__/
 .gitconfig
 .local/share/fish/fish_history
 .local/share/fish/generated_completions/
-
+.python_history
 
 # C extensions
 *.so
