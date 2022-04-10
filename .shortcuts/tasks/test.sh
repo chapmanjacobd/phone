@@ -1,2 +1,2 @@
 #!/bin/bash
-termux-notification -c $(ls ~)
+termux-notification -c "$(ls ~)"
