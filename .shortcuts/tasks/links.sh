@@ -4,7 +4,8 @@ FILEN=${1:-tabs.txt}
 
 URLS=$(head -7 $SD/d/00_Metadata/$FILEN)
 for url in $URLS; do
-  ~/.shortcuts/tasks/open-browser.sh $url > /dev/null &
+  url="$url" && [[ ! "$url" =~ ^http ]] && url="http://$url"
+  ~/.shortcuts/tasks/open-browser.sh "$url" > /dev/null &
   sleep 1
 done
 wait
