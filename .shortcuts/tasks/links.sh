@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 SD=/storage/7728-84FA
 
 URLS=$(head -7 $SD/d/00_Metadata/tabs.txt)
