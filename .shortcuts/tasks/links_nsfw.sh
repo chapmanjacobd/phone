@@ -1,3 +1,3 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-~/.shortcuts/tasks/open-browser.sh tabs_nsfw.txt
+~/.shortcuts/tasks/links.sh tabs_nsfw.txt
