@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-SD=/storage/7728-84FA
+SD=~/d/
 FILEN=${1:-tabs.txt}
 
 URLS=$(head -7 $SD/d/00_Metadata/$FILEN)

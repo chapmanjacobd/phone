@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 INT=/sdcard
-SD=/storage/7728-84FA
+SD=~/d/
 
 rm -rf $INT/Pictures/.thumbnails/
 rm -rf $INT/Pictures/Instagram/
