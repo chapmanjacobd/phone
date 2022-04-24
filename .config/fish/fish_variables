@@ -3,6 +3,7 @@
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_op:termux\x2dopen
 SETUVAR _fish_abbr_q:exit
+SETUVAR _fish_abbr_unli:ssh\x20jacob\x40unli\x2exyz\x20\x2di\x20storage/shared/Android/SECURE/ranch
 SETUVAR _fish_abbr_vd:catt\x20volumedown
 SETUVAR _fish_abbr_vu:catt\x20volumeup
 SETUVAR _fish_abbr_wip:git\x20add\x20\x2e\x3bgit\x20commit\x20\x2dm\x20wip\x3bgit\x20pull\x3bgit\x20push
@@ -28,10 +29,10 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrbl
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_features:stderr\x2dnocaret\x1eqmark\x2dnoglob\x1eregex\x2deasyesc\x1eampersand\x2dnobg\x2din\x2dtoken
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1e\x2d\x2ditalics
 SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2d\x2dreverse
-SETUVAR fish_features:stderr\x2dnocaret\x1eqmark\x2dnoglob\x1eregex\x2deasyesc\x1eampersand\x2dnobg\x2din\x2dtoken
