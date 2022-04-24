@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.ssh
 .lesshst
 .bash_history
 .git-credentials
