@@ -22,7 +22,7 @@ rm -rf $INT/AudioRecorder/
 cp -R $INT/Music/Sound\ records/* $SD/d/84_Recordings/
 rm -rf $INT/Music/Sound\ records/
 
-mv $INT/Download/* $SD/d/31_Downloads/
+mv $INT/Download/* $SD/d/03_Downloads/
 
 rm -rf $INT/Pictures/Instagram/
 rm -rf $INT/Pictures/.thumbnails/
