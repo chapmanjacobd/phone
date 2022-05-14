@@ -2,6 +2,7 @@
 
 fd -d1 . ~/sdcard/Download/ -ePNG -eWEBP -x mv {} ~/.shortcuts/icons/
 fd . ~/.shortcuts/icons/ -eWEBP -x fish -c "convert {} {.}.png && rm {}"
+mogrify -resize 512x512 -gravity center -background transparent -extent 512x512 ~/.shortcuts/icons/*.png
 
 INT=/sdcard
 SD=~/ext
