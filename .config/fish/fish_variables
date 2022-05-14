@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
+SETUVAR _fish_abbr_es:nano\x20/data/data/com\x2etermux/files/home/\x2eshortcuts/tasks/syncthing\x2esh
 SETUVAR _fish_abbr_op:termux\x2dopen
 SETUVAR _fish_abbr_q:exit
 SETUVAR _fish_abbr_unli:ssh\x20jacob\x40unli\x2exyz\x20\x2di\x20storage/shared/Android/SECURE/ranch
