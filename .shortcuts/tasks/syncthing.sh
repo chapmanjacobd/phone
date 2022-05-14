@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 fd -d1 . ~/sdcard/Download/ -ePNG -eWEBP -x mv {} ~/.shortcuts/icons/
-fd . ~/.shortcuts/icons/ -eWEBP -x convert {} {.}.png
+fd . ~/.shortcuts/icons/ -eWEBP -x fish -c "convert {} {.}.png && rm {}"
 
 INT=/sdcard
 SD=~/ext
