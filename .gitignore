@@ -12,6 +12,7 @@ __pycache__/
 .local/share/fish/generated_completions/
 .python_history
 .config/gcloud
+.config/pulse/
 
 # C extensions
 *.so
