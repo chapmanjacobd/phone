@@ -1,11 +1,11 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/fish
 
 fd -d1 . ~/sdcard/Download/ -ePNG -eWEBP -x mv {} ~/.shortcuts/icons/
 fd . ~/.shortcuts/icons/ -eWEBP -x fish -c "convert {} {.}.png && rm {}"
 mogrify -resize 512x512 -gravity center -background transparent -extent 512x512 ~/.shortcuts/icons/*.png
 
-INT=/sdcard
-SD=~/ext
+set INT /sdcard
+set SD ~/ext
 
 rm -rf $INT/Pictures/.thumbnails/
 rm -rf $INT/Pictures/Instagram/
@@ -43,3 +43,4 @@ rm -rf $SD/Movies/.thumbnails/
 rm -rf $SD/Music/.thumbnails/
 
 find $SD/ -empty -type d -delete
+cd $SD/github/curati && wip
