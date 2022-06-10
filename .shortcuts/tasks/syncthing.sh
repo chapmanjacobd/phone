@@ -6,8 +6,8 @@ fd . ~/.shortcuts/icons/ -eWEBP -x fish -c "convert {} {.}.png && rm {}"
 set minimumWidth 512
 set minimumHeight 512
 for f in ~/.shortcuts/icons/*.png
-    set imageWidth=$(identify -format "%w" "$f")
-    set imageHeight=$(identify -format "%h" "$f")
+    set imageWidth (identify -format "%w" "$f")
+    set imageHeight (identify -format "%h" "$f")
 
     if [ "$imageWidth" -gt "$minimumWidth" ] || [ "$imageHeight" -gt "$minimumHeight" ]; then
         mogrify -resize ''"$minimumWidth"x"$minimumHeight"'' -gravity center -background transparent -extent 512x512 $f
