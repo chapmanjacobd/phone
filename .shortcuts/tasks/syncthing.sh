@@ -1,8 +1,18 @@
 #!/data/data/com.termux/files/usr/bin/fish
 
-fd -d1 . ~/sdcard/Download/ -ePNG -eWEBP -x mv {} ~/.shortcuts/icons/
+#fd -d1 . ~/sdcard/Download/ -ePNG -eWEBP -x mv {} ~/.shortcuts/icons/
 fd . ~/.shortcuts/icons/ -eWEBP -x fish -c "convert {} {.}.png && rm {}"
-mogrify -resize 512x512 -gravity center -background transparent -extent 512x512 ~/.shortcuts/icons/*.png
+
+set minimumWidth 512
+set minimumHeight 512
+for f in ~/.shortcuts/icons/*.png
+    set imageWidth=$(identify -format "%w" "$f")
+    set imageHeight=$(identify -format "%h" "$f")
+
+    if [ "$imageWidth" -gt "$minimumWidth" ] || [ "$imageHeight" -gt "$minimumHeight" ]; then
+        mogrify -resize ''"$minimumWidth"x"$minimumHeight"'' -gravity center -background transparent -extent 512x512 $f
+    end
+end
 
 set INT /sdcard
 set SD ~/ext
