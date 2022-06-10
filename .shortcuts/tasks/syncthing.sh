@@ -53,4 +53,4 @@ rm -rf $SD/Movies/.thumbnails/
 rm -rf $SD/Music/.thumbnails/
 
 find $SD/ -empty -type d -delete
-cd $SD/github/curati && wip
+cd $SD/github/curati && git add .;git commit -m wip;git pull;git push
