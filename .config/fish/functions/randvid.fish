@@ -1,4 +1,3 @@
-function randvid
-
-    fd -eMP4 -eWEBM -eMKV . ~/d/70_Now_Watching/ | shuf | head -1
+function randvid --argument folder
+    fd -eMP4 -eWEBM -eMKV . $folder | shuf | head -1
 end
