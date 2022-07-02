@@ -1,4 +1,4 @@
-function randvid --argument db
+function randvid
     #fd -eMP4 -eWEBM -eMKV . $folder | shuf | head -1
-    python lb/watch.py lb/$db -p --filename -L 1 -O $argv
+    python lb/watch.py lb/$argv -p --filename -L 1 -O
 end
