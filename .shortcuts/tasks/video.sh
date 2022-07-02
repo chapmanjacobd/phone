@@ -1,3 +1,3 @@
 #!/data/data/com.termux/files/usr/bin/fish
 
-open (randvid videos.db)
+open (python lb/watch.py lb/videos.db --sort 'duration desc' -p --filename -L 1 -O)
