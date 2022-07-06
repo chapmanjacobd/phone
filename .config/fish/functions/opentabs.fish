@@ -16,7 +16,7 @@ function opentabs
 
     set tabs (head -n $qty $file)
 
-    for tab in tabs
+    for tab in $tabs
         echo $tab
         if test http = (string sub --length 4 "$tab")
             ~/.shortcuts/tasks/open-browser.sh $tab >/dev/null &
