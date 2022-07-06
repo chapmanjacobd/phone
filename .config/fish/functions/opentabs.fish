@@ -1,5 +1,5 @@
 function opentabs
-    argparse p/prefix q/qty -- $argv
+    argparse 'p/prefix=' 'q/qty=' -- $argv
     set -l file $argv[1]
     if set -q $_flag_prefix
         set pre $_flag_prefix
