@@ -1,3 +1,3 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/fish
 
-~/.shortcuts/tasks/links.sh _intlcinema
+opentabs ~/mc/_intlcinema
