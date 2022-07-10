@@ -11,7 +11,6 @@ SETUVAR _fish_abbr_tee:tee\x20\x2da
 SETUVAR _fish_abbr_unli:ssh\x20jacob\x40unli\x2exyz\x20\x2di\x20storage/shared/Android/SECURE/ranch
 SETUVAR _fish_abbr_vd:catt\x20volumedown
 SETUVAR _fish_abbr_vu:catt\x20volumeup
-SETUVAR _fish_abbr_wip:git\x20add\x20\x2e\x3bgit\x20commit\x20\x2dm\x20wip\x3bgit\x20pull\x3bgit\x20push
 SETUVAR fish_color_autosuggestion:555
 SETUVAR fish_color_cancel:\x2d\x2dreverse
 SETUVAR fish_color_command:blue
