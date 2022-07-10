@@ -27,5 +27,6 @@ function opentabs
     end
     wait
     sed -i -e 1,"$qty"d $file
-
+    ~/mc
+    wip
 end
