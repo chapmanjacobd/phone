@@ -1,3 +1,3 @@
 function wip
-git add .;git commit -m wip;git pull;git push
+  git diff;git add .;git commit -m wip;git pull;git push
 end
