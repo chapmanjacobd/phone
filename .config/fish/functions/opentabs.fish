@@ -14,6 +14,9 @@ function opentabs
         set qty 7
     end
 
+    ~/mc
+    wip
+
     set tabs (head -n $qty $file)
 
     for tab in $tabs
@@ -27,6 +30,7 @@ function opentabs
     end
     wait
     sed -i -e 1,"$qty"d $file
+    
     ~/mc
     wip
 end
