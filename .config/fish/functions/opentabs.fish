@@ -22,7 +22,7 @@ function opentabs
     for tab in $tabs
         echo $tab
         if test http = (string sub --length 4 "$tab")
-            ~/.shortcuts/tasks/open-browser.sh $tab >/dev/null &
+            ~/.shortcuts/tasks/open-browser.sh "$tab" >/dev/null &
         else
             ~/.shortcuts/tasks/open-browser.sh "$pre$tab" >/dev/null &
         end
