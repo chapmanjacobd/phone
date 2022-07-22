@@ -1,4 +1,4 @@
 function wip
   $argv
-  git diff;git add .;git commit -m wip;git pull;git push
+  git --no-pager diff;git add .;git commit -m wip;git pull;git push
 end
