@@ -1,3 +1,3 @@
 #!/data/data/com.termux/files/usr/bin/fish
 
-opentabs ~/mc/_intlmusic
+opentabs ~/mc/_music

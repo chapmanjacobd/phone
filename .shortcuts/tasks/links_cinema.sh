@@ -1,3 +1,3 @@
 #!/data/data/com.termux/files/usr/bin/fish
 
-opentabs ~/mc/_intlcinema
+opentabs ~/mc/_cine
