@@ -1,5 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    bind \b backward-kill-bigword
 end
 
 # The next line updates PATH for the Google Cloud SDK.
