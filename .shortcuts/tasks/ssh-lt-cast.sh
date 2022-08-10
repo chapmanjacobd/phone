@@ -1,3 +1,3 @@
 #!/data/data/com.termux/files/usr/bin/fish
 
-ssh xk@192.168.1.174 lt -cast -u random -O
+ssh xk@192.168.1.174 lt-start
