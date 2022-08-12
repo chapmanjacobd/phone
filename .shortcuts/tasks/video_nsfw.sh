@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/fish
 
-set vid (python lb/watch.py lb/tax.db --sort 'duration desc' -p --filename -L 1 -O)
+set vid (lb wt ~/lb/tax.db -p f -L)
 echo "$vid"
 open "$vid"
