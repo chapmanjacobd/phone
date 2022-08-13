@@ -1,6 +1,6 @@
 termux-setup-storage
 pkg upgrade
-pkg install fish wget ffmpeg python coreutils moreutils termux-api curl openssh x11-repo mpv-x imagemagick fd socat file jq
+pkg install fish wget ffmpeg python coreutils moreutils termux-api curl openssh x11-repo mpv-x imagemagick fd socat file jq netcat-openbsd
 pip install --upgrade requests pip
 pip install yt-dlp google-api-python-client pypyp ipython trash-cli joblib rich pandas python-dotenv catt sqlite-utils mutagen tinytag fuckit tabulate natsort joblib rich pandas ipython python-dotenv subliminal catt sqlite-utils mutagen tinytag fuckit tabulate natsort protobuf xklb
 curl https://sdk.cloud.google.com -o sdk.sh
