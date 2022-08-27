@@ -16,6 +16,21 @@ __pycache__/
 .config/gcloud
 .config/pulse/
 .pdbhistory
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.flv
+*.webm
 
 # C extensions
 *.so
