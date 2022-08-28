@@ -5,7 +5,7 @@ function wip
 
     git add .
     git --no-pager diff HEAD
-    if confirm
+    if count $argv >/dev/null; or confirm
         git commit -m wip
         git pull
         git push
