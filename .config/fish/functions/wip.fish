@@ -1,4 +1,10 @@
 function wip
+    if test (pwd) = /data/data/com.termux/files/home
+        for func in ~/.config/fish/functions/*.fish
+            fish_indent -w $func
+        end
+    end
+
     if count $argv >/dev/null
         $argv
     end
