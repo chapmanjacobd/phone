@@ -1,6 +1,6 @@
 termux-setup-storage
 pkg upgrade
-pkg install fish wget ffmpeg python coreutils moreutils termux-api curl openssh x11-repo mpv-x imagemagick fd socat file jq netcat-openbsd cronie termux-services sv-enable crond
+pkg install fish wget ffmpeg python coreutils moreutils termux-api curl openssh x11-repo mpv-x imagemagick fd socat file jq netcat-openbsd cronie
 pip install --upgrade requests pip
 pip install yt-dlp pypyp ipython trash-cli rich pandas catt sqlite-utils xklb
 
