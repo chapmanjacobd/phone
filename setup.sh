@@ -1,3 +1,4 @@
+#!/bin/bash
 termux-setup-storage
 pkg upgrade
 pkg install fish wget ffmpeg python coreutils moreutils termux-api curl openssh x11-repo mpv-x imagemagick fd socat file jq netcat-openbsd cronie
@@ -9,6 +10,6 @@ do
   termux-fix-shebang $f
 done
 
-git clone https://github.com/adi1090x/termux-style && cd termux-style && ./install
+fish -c crontab
 
-sv-enable crond
+git clone https://github.com/adi1090x/termux-style && cd termux-style && ./install
