@@ -12,4 +12,6 @@ done
 
 fish -c crontab
 
+termux-open --view --content-type "application/vnd.android.package-archive" bin/moddh-1.01-release.apk
+
 git clone https://github.com/adi1090x/termux-style && cd termux-style && ./install
