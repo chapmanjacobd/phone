@@ -20,33 +20,23 @@ set SD ~/ext
 rm -rf $INT/Pictures/.thumbnails/
 rm -rf $INT/Pictures/Instagram/
 rm -rf $INT/Movies/.thumbnails/
+rm -rf $INT/Music/.thumbnails/
 
-cp -R $INT/Pictures/Joey/* $SD/d/95_Memes/
-rm -rf $INT/Pictures/Joey/
+cp -R $INT/Pictures/Joey/* $SD/d/95_Memes/; and rm -rf $INT/Pictures/Joey/
 
-cp -R $INT/Pictures/Screenshots/* $SD/d/60_Now_Viewing/
-rm -rf $INT/Pictures/Screenshots/
+cp -R $INT/Pictures/Screenshots/* $SD/d/60_Now_Viewing/; and rm -rf $INT/Pictures/Screenshots/
 
-cp -R $INT/Pictures/* $SD/d/95_Memes/
-rm -rf $INT/Pictures/*
+cp -R $INT/Pictures/* $SD/d/95_Memes/; and rm -rf $INT/Pictures/*
 
-cp -R $INT/AudioRecorder/* $SD/d/87_Recordings/
-rm -rf $INT/AudioRecorder/
+cp -R $INT/AudioRecorder/* $SD/d/87_Recordings/; and rm -rf $INT/AudioRecorder/*
 
-cp -R $INT/Music/Sound\ records/* $SD/d/87_Recordings/
-rm -rf $INT/Music/Sound\ records/
+cp -R $INT/Music/Sound\ records/* $SD/d/87_Recordings/; and rm -rf $INT/Music/Sound\ records/*
 
 mv $INT/Download/* $SD/d/03_Downloads/
-
-rm -rf $INT/Pictures/Instagram/
-rm -rf $INT/Pictures/.thumbnails/
-rm -rf $INT/Movies/.thumbnails/
-rm -rf $INT/Music/.thumbnails/
 
 find $INT/ -empty -type d -delete
 mkdir -p $INT/Pictures/
 mkdir -p $INT/Download/
-
 
 rm -rf $SD/Pictures/.thumbnails/
 rm -rf $SD/Movies/.thumbnails/
