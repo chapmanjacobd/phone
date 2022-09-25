@@ -21,19 +21,19 @@ rm -rf $INT/Pictures/.thumbnails/
 rm -rf $INT/Pictures/Instagram/
 rm -rf $INT/Movies/.thumbnails/
 
-cp -R $INT/Pictures/Joey/* $SD/d/92_Memes/
+cp -R $INT/Pictures/Joey/* $SD/d/95_Memes/
 rm -rf $INT/Pictures/Joey/
 
-cp -R $INT/Pictures/Screenshots/* $SD/d/62_Tax_Photos/
+cp -R $INT/Pictures/Screenshots/* $SD/d/60_Now_Viewing/
 rm -rf $INT/Pictures/Screenshots/
 
-cp -R $INT/Pictures/* $SD/d/92_Memes/
+cp -R $INT/Pictures/* $SD/d/95_Memes/
 rm -rf $INT/Pictures/*
 
-cp -R $INT/AudioRecorder/* $SD/d/84_Recordings/
+cp -R $INT/AudioRecorder/* $SD/d/87_Recordings/
 rm -rf $INT/AudioRecorder/
 
-cp -R $INT/Music/Sound\ records/* $SD/d/84_Recordings/
+cp -R $INT/Music/Sound\ records/* $SD/d/87_Recordings/
 rm -rf $INT/Music/Sound\ records/
 
 mv $INT/Download/* $SD/d/03_Downloads/
