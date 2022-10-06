@@ -8,7 +8,7 @@ __pycache__/
 .lesshst
 .bash_history
 .git-credentials
-.gitconfig
+#.gitconfig
 .local/share/fish/fish_history
 .local/share/fish/generated_completions/
 .local/share/Trash/
@@ -34,7 +34,6 @@ __pycache__/
 
 # C extensions
 *.so
-.gitconfig
 
 # Distribution / packaging
 .Python
