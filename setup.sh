@@ -14,4 +14,7 @@ fish -c crontab
 
 termux-open --view --content-type "application/vnd.android.package-archive" bin/moddh-1.01-release.apk
 mkdir /data/data/com.termux/files/home/../tmp/
+
 # git clone https://github.com/adi1090x/termux-style && cd termux-style && ./install
+
+adb shell pm grant net.dinglisch.android.taskerm android.permission.SET_MEDIA_KEY_LISTENER
