@@ -19,6 +19,7 @@ set SD ~/ext
 
 rm -rf $INT/Pictures/.thumbnails/
 rm -rf $INT/Pictures/Instagram/
+rm -rf $INT/Movies/Instagram/
 rm -rf $INT/Movies/.thumbnails/
 rm -rf $INT/Music/.thumbnails/
 
