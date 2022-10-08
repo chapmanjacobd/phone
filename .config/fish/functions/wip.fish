@@ -11,6 +11,7 @@ function wip
 
     git add .
     git --no-pager diff HEAD
+    git diff --stat HEAD
     if count $argv >/dev/null; or confirm
         git commit -m wip
         git pull
