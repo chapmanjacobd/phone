@@ -3,3 +3,5 @@
 [user]
 	email = phone@unli.xyz
 	name = Jacob
+[safe]
+	directory = /storage/6E7B-7DCE/github/curati
