@@ -1,1 +1,2 @@
 30 4 * * * ~/.shortcuts/tasks/syncthing.sh
+0  5 * * * fish -c refreshLibrary
