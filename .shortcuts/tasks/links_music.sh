@@ -1,3 +1,3 @@
-#!/data/data/com.termux/files/usr/bin/fish
+#!/bin/env fish
 
 opentabs ~/mc/_music
