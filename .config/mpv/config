@@ -1,16 +1,12 @@
 script-opts=''
-script-opts-append=osc-title=${filename}
-script-opts-append=autocrop-auto=no
 script-opts-append=excerpt-no-pause-on-file-loaded=1
-script-opts-append=osc-windowcontrols=no
-script-opts-append=ontop-level=window
 quiet=yes
 
 volume=100
 volume-max=200
 
 demuxer-seekable-cache=yes
-demuxer-max-bytes=500MiB
+demuxer-max-bytes=50MiB
 demuxer-readahead-secs=180
 
 replaygain=track
