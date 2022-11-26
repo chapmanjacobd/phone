@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/fish
+#!/bin/env fish
 
 #fd -d1 . ~/sdcard/Download/ -ePNG -eWEBP -x mv {} ~/.shortcuts/icons/
 fd . ~/.shortcuts/icons/ -eWEBP -x fish -c "convert {} {.}.png && rm {}"
