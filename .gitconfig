@@ -5,3 +5,5 @@
 	name = Jacob
 [safe]
 	directory = /storage/6E7B-7DCE/github/curati
+[pull]
+	rebase = false
