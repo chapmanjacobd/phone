@@ -9,6 +9,7 @@ SETUVAR _fish_abbr_funced:funced\x20\x2ds
 SETUVAR _fish_abbr_op:termux\x2dopen
 SETUVAR _fish_abbr_q:exit
 SETUVAR _fish_abbr_rm:trash
+SETUVAR _fish_abbr_sshh:ssh\x20pakon\x20\x2dt\x20tmux\x20new\x2dsession\x20\x2dA\x20\x2ds\x20phone
 SETUVAR _fish_abbr_tee:tee\x20\x2da
 SETUVAR _fish_abbr_unli:ssh\x20jacob\x40unli\x2exyz\x20\x2di\x20storage/shared/Android/SECURE/ranch
 SETUVAR _fish_abbr_vd:catt\x20volumedown
