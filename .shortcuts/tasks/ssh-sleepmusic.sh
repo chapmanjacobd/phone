@@ -1,4 +1,4 @@
-#!/bin/env fish
+#!/data/data/com.termux/files/usr/bin/env fish
 
 set s (termux-dialog text -i relax -t Searchtext | jq -r '.text')
 set t (termux-dialog radio -v "Bedroom pair","Xylo and Orchestra" | jq -r '.text')

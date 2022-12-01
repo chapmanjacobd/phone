@@ -1,3 +1,3 @@
-#!/bin/env fish
+#!/data/data/com.termux/files/usr/bin/env fish
 
 randmusic
