@@ -1,23 +1,18 @@
 /.sqlite_history
-
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-.android
-.ssh
-.lesshst
-.bash_history
-.git-credentials
+/.local/share/tasker.xml
+/.local/share/fish/fish_history
+/.local/share/fish/generated_completions/
+/.local/share/Trash/
+/.android
+/.ssh
+/.lesshst
+/.bash_history
+/.git-credentials
 #.gitconfig
-.local/share/fish/fish_history
-.local/share/fish/generated_completions/
-.local/share/Trash/
-.python_history
-.config/gcloud
-.config/pulse/
-.pdbhistory
+/.python_history
+/.config/gcloud
+/.config/pulse/
+/.pdbhistory
 *.7z
 *.dmg
 *.gz
@@ -33,6 +28,11 @@ __pycache__/
 *.avi
 *.flv
 *.webm
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
 # C extensions
 *.so
