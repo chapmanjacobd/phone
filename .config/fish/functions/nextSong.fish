@@ -5,7 +5,7 @@ function nextSong
         trash-put "$song" &
         echo 'playlist-next force' | socat - $socket
     else
-        ssh 10400 -o RemoteCommand=none lb next --delete
+        ssh pakon -o RemoteCommand=none lb next --delete
     end
 
 end
