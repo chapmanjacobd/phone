@@ -1,7 +1,4 @@
 #!/bin/bash
-ssh-keygen -t ed25519 -q -N '' </dev/zero
-cat .ssh/id_ed25519.pub
-
 termux-setup-storage
 
 pkg install fish wget ffmpeg python coreutils moreutils termux-api curl openssh mpv imagemagick fd socat file jq netcat-openbsd cronie wol python-numpy micro android-tools rsync fakeroot
@@ -24,6 +21,9 @@ wget -nc https://f-droid.org/F-Droid.apk
 
 ln -s $PREFIX/bin/termux-clipboard-set $PREFIX/bin/xclip
 
+rm storage/external-1
+
+ssh-keygen -t ed25519 -q -N '' </dev/zero
 cat .ssh/id_ed25519.pub
 
 adb shell pm grant net.dinglisch.android.taskerm android.permission.SET_MEDIA_KEY_LISTENER
