@@ -1,1 +1,10 @@
-unbind ^J main
+bind ^s writeout main
+bind ^x cut main
+bind ^z undo main
+bind ^y redo main
+bind ^f whereis main
+bind ^w exit main
+bind F3 findnext main
+bind ^h replace main
+set tabsize 4
+set mouse
