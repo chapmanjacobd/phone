@@ -1,3 +1,4 @@
+unbind ^J main
 bind ^s writeout main
 bind ^x cut main
 bind ^z undo main
