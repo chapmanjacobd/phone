@@ -9,4 +9,4 @@ set -q t; or set t "Bedroom pair"
 set -q timer; or set timer 480
 
 
-ssh xk@192.168.1.174 lt-search "$s" "$t" $timer
+ssh xk@192.168.1.114 lt-search "$s" "$t" $timer

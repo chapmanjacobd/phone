@@ -9,6 +9,7 @@ function wip
         $argv
     end
 
+    git reset
     git add .
     git --no-pager diff HEAD
     git diff --stat HEAD
