@@ -1,5 +1,8 @@
 if status is-interactive
+    bind \e\[1\;5C forward-bigword
+    bind \e\[1\;5D backward-bigword
     bind \b backward-kill-bigword
+    bind \cy redo
 end
 
 if not pgrep -f "crond" >/dev/null
