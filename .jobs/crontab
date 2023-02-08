@@ -1,4 +1,4 @@
 30 4 * * * ~/.shortcuts/tasks/syncthing.sh
 0  5 * * * fish -c refreshLibrary
 30 9 * * * ssh xk@192.168.1.114 lt-wakeup
-45 21 * * * ssh xk@192.168.1.114 "lt-search 'Bedroom pair' 40 relax"
+45 21 * * * ssh xk@192.168.1.114 "lt-search Bedroom 40 relax"
