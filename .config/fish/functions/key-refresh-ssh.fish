@@ -8,4 +8,5 @@ function key-refresh-ssh --argument label
     cat ~/.ssh/id_ed25519.pub >>~/.ssh/authorized_keys
     filterfile ~/.ssh/authorized_keys (cat $oldkey.pub)
     cat ~/.ssh/id_ed25519.pub
+    ssh-copy-id -f -i ~/.ssh/id_ed25519.pub -o "IdentityFile "$oldkey pakon
 end
