@@ -5,8 +5,8 @@ function key-refresh-ssh --argument label
     mv ~/.ssh/id_ed25519.pub $oldkey.pub
 
     ssh-keygen -t ed25519 -C $label -q -N '' </dev/zero || true
-    cat ~/.ssh/id_ed25519.pub >>~/.ssh/authorized_keys
-    filterfile ~/.ssh/authorized_keys (cat $oldkey.pub)
-    cat ~/.ssh/id_ed25519.pub
+
     ssh-copy-id -f -i ~/.ssh/id_ed25519.pub -o "IdentityFile "$oldkey pakon
+    and ssh pakon filterfile ~/.ssh/authorized_keys (cat $oldkey.pub)
+    cat ~/.ssh/id_ed25519.pub
 end
