@@ -1,6 +1,6 @@
 # Defined via `source`
 function key-refresh-ssh --argument label
-    set oldkey (mktemp --tmpdir=/home/xk/.ssh/old/ id_ed25519_XXXXX)
+    set oldkey (mktemp --tmpdir=(path resolve ~/.ssh/old/) id_ed25519_XXXXX)
     mv ~/.ssh/id_ed25519 $oldkey
     mv ~/.ssh/id_ed25519.pub $oldkey.pub
 
