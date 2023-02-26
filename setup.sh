@@ -23,7 +23,6 @@ ln -s $PREFIX/bin/termux-clipboard-set $PREFIX/bin/xclip
 
 rm storage/external-1
 
-ssh-keygen -t ed25519 -q -N '' </dev/zero
-cat .ssh/id_ed25519.pub
+key-refresh-ssh phone
 
 adb shell pm grant net.dinglisch.android.taskerm android.permission.SET_MEDIA_KEY_LISTENER
