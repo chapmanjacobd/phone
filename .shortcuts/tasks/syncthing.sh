@@ -25,7 +25,7 @@ rm -rf $INT/Music/.thumbnails/
 
 cp -R $INT/Pictures/Joey/* $SD/d/95_Memes/; and rm -rf $INT/Pictures/Joey/
 
-cp -R $INT/Pictures/Screenshots/* $SD/d/60_Now_Viewing/; and rm -rf $INT/Pictures/Screenshots/
+cp -R $INT/Pictures/Screenshots/* $SD/d/90_Now_Viewing/; and rm -rf $INT/Pictures/Screenshots/
 
 cp -R $INT/Pictures/* $SD/d/95_Memes/; and rm -rf $INT/Pictures/*
 
