@@ -9,5 +9,6 @@ demuxer-seekable-cache=yes
 demuxer-max-bytes=50MiB
 demuxer-readahead-secs=180
 
+audio-channels=stereo
 replaygain=track
-af="scaletempo2,lavfi=[pan=1c|c0=0.5*c0+0.5*c1]"
+af="scaletempo2,lavfi=[pan=1c|c0=0.5*c0+0.5*c1],lavfi=[loudnorm=i=-14.0:lra=13.0:tp=-1.0]"
