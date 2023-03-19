@@ -36,7 +36,7 @@ cp -R $INT/Music/Sound\ records/* $SD/d/87_Recordings/; and rm -rf $INT/Music/So
 
 mv $INT/Download/* $SD/d/03_Downloads/
 
-find $INT/ -empty -type d -delete
+find $INT/ -empty -type d -delete 2> /dev/null
 mkdir -p $INT/Pictures/
 mkdir -p $INT/Download/
 
@@ -44,5 +44,5 @@ rm -rf $SD/Pictures/.thumbnails/
 rm -rf $SD/Movies/.thumbnails/
 rm -rf $SD/Music/.thumbnails/
 
-find $SD/ -empty -type d -delete
+find $SD/ -empty -type d -delete 2> /dev/null
 cd $SD/github/curati && git add .;git commit -m wip;git pull;git push
