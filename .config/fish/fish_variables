@@ -10,6 +10,7 @@ SETUVAR _fish_abbr_adbpair:fakeroot\x20adb\x20pair\x20192\x2e168\x2e1\x2e242\x3a
 SETUVAR _fish_abbr_clip:termux\x2dclipboard\x2dset
 SETUVAR _fish_abbr_es:nano\x20/data/data/com\x2etermux/files/home/\x2eshortcuts/tasks/syncthing\x2esh
 SETUVAR _fish_abbr_funced:funced\x20\x2ds
+SETUVAR _fish_abbr_gclone:git\x20clone
 SETUVAR _fish_abbr_gp:git\x20pull
 SETUVAR _fish_abbr_gr:git\x20reset
 SETUVAR _fish_abbr_op:termux\x2dopen
