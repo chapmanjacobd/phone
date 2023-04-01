@@ -29,7 +29,7 @@ cp -R $INT/Pictures/Screenshots/* $SD/d/90_Now_Viewing/; and rm -rf $INT/Picture
 cp -R $INT/DCIM/Screenshots/* $SD/d/90_Now_Viewing/; and rm -rf $INT/DCIM/Screenshots/
 cp -R $INT/Pictures/Whatsapp/* $SD/d/90_Now_Viewing/; and rm -rf $INT/Pictures/Whatsapp/
 
-cp -R $INT/Pictures/* $SD/d/95_Memes/; and rm -rf $INT/Pictures/*
+cp -R $INT/Pictures/* $SD/d/90_Now_Viewing/; and rm -rf $INT/Pictures/*
 
 cp -R $INT/AudioRecorder/* $SD/d/87_Recordings/; and rm -rf $INT/AudioRecorder/*
 
