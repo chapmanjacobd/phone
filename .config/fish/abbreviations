@@ -14,3 +14,4 @@ abbr -a -- tee 'tee -a' # imported from a universal variable, see `help abbr`
 abbr -a -- gr 'git reset' # imported from a universal variable, see `help abbr`
 abbr -a -- unli 'ssh jacob@unli.xyz -i storage/shared/Android/SECURE/ranch' # imported from a universal variable, see `help abbr`
 abbr -a -- sshh 'ssh -4 pakon -t tmux new-session -A -s phone'
+abbr -a -- sshh ssh -4 pakon -t tmux new-session -A -s phone
