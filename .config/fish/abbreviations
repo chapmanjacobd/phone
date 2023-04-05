@@ -1,1 +1,16 @@
 abbr -a -- sshh ssh -4 pakon -t tmux new-session -A -s phone
+abbr -a -- op termux-open # imported from a universal variable, see `help abbr`
+abbr -a -- funced 'funced -s' # imported from a universal variable, see `help abbr`
+abbr -a -- adbpair 'fakeroot adb pair 192.168.1.242:45492 263695' # imported from a universal variable, see `help abbr`
+abbr -a -- clip termux-clipboard-set # imported from a universal variable, see `help abbr`
+abbr -a -- gclone 'git clone' # imported from a universal variable, see `help abbr`
+abbr -a -- vd 'catt volumedown' # imported from a universal variable, see `help abbr`
+abbr -a -- gp 'git pull' # imported from a universal variable, see `help abbr`
+abbr -a -- q exit # imported from a universal variable, see `help abbr`
+abbr -a -- es 'nano /data/data/com.termux/files/home/.shortcuts/tasks/syncthing.sh' # imported from a universal variable, see `help abbr`
+abbr -a -- sshg 'ssh -T pakon TERM=xterm-256color ssh -tt pulse15' # imported from a universal variable, see `help abbr`
+abbr -a -- vu 'catt volumeup' # imported from a universal variable, see `help abbr`
+abbr -a -- tee 'tee -a' # imported from a universal variable, see `help abbr`
+abbr -a -- gr 'git reset' # imported from a universal variable, see `help abbr`
+abbr -a -- unli 'ssh jacob@unli.xyz -i storage/shared/Android/SECURE/ranch' # imported from a universal variable, see `help abbr`
+abbr -a -- sshh 'ssh -4 pakon -t tmux new-session -A -s phone'
