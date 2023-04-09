@@ -1,4 +1,4 @@
 function wt
     ~/lb/
-    lb wt -k delete $argv
+    lb wt ~/lb/videos.db $argv
 end
