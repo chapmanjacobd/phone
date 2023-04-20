@@ -1,4 +1,3 @@
-abbr -a -- sshh ssh -4 pakon -t tmux new-session -A -s phone
 abbr -a -- op termux-open # imported from a universal variable, see `help abbr`
 abbr -a -- funced 'funced -s' # imported from a universal variable, see `help abbr`
 abbr -a -- adbpair 'fakeroot adb pair 192.168.1.242:45492 263695' # imported from a universal variable, see `help abbr`
@@ -13,7 +12,6 @@ abbr -a -- vu 'catt volumeup' # imported from a universal variable, see `help ab
 abbr -a -- tee 'tee -a' # imported from a universal variable, see `help abbr`
 abbr -a -- gr 'git reset' # imported from a universal variable, see `help abbr`
 abbr -a -- unli 'ssh jacob@unli.xyz -i storage/shared/Android/SECURE/ranch' # imported from a universal variable, see `help abbr`
-abbr -a -- sshh 'ssh -4 pakon -t tmux new-session -A -s phone'
-abbr -a -- sshh ssh -4 pakon -t tmux new-session -A -s phone
 abbr -a -- abbr abbrsave
 abbr -a -- relmv lb relmv -v
+abbr -a -- sshh ssh\ pakon\ -t\ tmux\ new-session\ -A\ -s\ phone\ \"\'fish\ -c\ clean_home\;\ exec\ fish\'\"
