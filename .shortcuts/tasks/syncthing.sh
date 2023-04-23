@@ -9,7 +9,8 @@ for f in ~/.shortcuts/icons/*.png
     set imageWidth (identify -format "%w" "$f")
     set imageHeight (identify -format "%h" "$f")
 
-    if [ "$imageWidth" -gt "$minimumWidth" ] || [ "$imageHeight" -gt "$minimumHeight" ]; then
+    if [ "$imageWidth" -gt "$minimumWidth" ] || [ "$imageHeight" -gt "$minimumHeight" ]
+        then
         mogrify -resize ''"$minimumWidth"x"$minimumHeight"'' -gravity center -background transparent -extent 512x512 $f
     end
 end
@@ -17,33 +18,27 @@ end
 set INT /sdcard
 set SD ~/ext
 
-rm -rf $INT/Pictures/.thumbnails/
-rm -rf $INT/Pictures/Instagram/
-rm -rf $INT/Movies/Instagram/
-rm -rf $INT/Movies/.thumbnails/
-rm -rf $INT/Music/.thumbnails/
+for dir in $INT $SD
+    rm -rf $dir/Pictures/.thumbnails/
+    rm -rf $dir/Pictures/Instagram/
+    rm -rf $dir/Movies/Instagram/
+    rm -rf $dir/Movies/.thumbnails/
+    rm -rf $dir/Music/.thumbnails/
 
-cp -R $INT/Pictures/Joey/* $SD/d/95_Memes/; and rm -rf $INT/Pictures/Joey/
+    lb relmv $dir/Pictures/* $SD/d/90_Now_Viewing/
+    lb relmv $dir/DCIM/* $SD/d/90_Now_Viewing/
+end
 
-cp -R $INT/Pictures/Screenshots/* $SD/d/90_Now_Viewing/; and rm -rf $INT/Pictures/Screenshots/
-cp -R $INT/DCIM/Screenshots/* $SD/d/90_Now_Viewing/; and rm -rf $INT/DCIM/Screenshots/
-cp -R $INT/Pictures/Whatsapp/* $SD/d/90_Now_Viewing/; and rm -rf $INT/Pictures/Whatsapp/
+lb relmv $INT/AudioRecorder/* $INT/Music/Sound\ records/* $SD/d/87_Recordings/
 
-cp -R $INT/Pictures/* $SD/d/90_Now_Viewing/; and rm -rf $INT/Pictures/*
+lb relmv $INT/Download/* $SD/d/03_Downloads/
 
-cp -R $INT/AudioRecorder/* $SD/d/87_Recordings/; and rm -rf $INT/AudioRecorder/*
-
-cp -R $INT/Music/Sound\ records/* $SD/d/87_Recordings/; and rm -rf $INT/Music/Sound\ records/*
-
-mv $INT/Download/* $SD/d/03_Downloads/
-
-find $INT/ -empty -type d -delete 2> /dev/null
+find $INT/ -empty -type d -delete 2>/dev/null
 mkdir -p $INT/Pictures/
 mkdir -p $INT/Download/
 
-rm -rf $SD/Pictures/.thumbnails/
-rm -rf $SD/Movies/.thumbnails/
-rm -rf $SD/Music/.thumbnails/
-
-find $SD/ -empty -type d -delete 2> /dev/null
-cd $SD/github/curati && git add .;git commit -m wip;git pull;git push
+find $SD/ -empty -type d -delete 2>/dev/null
+cd $SD/github/curati && git add .
+git commit -m wip
+git pull
+git push
