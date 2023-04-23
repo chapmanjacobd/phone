@@ -25,13 +25,13 @@ for dir in $INT $SD
     rm -rf $dir/Movies/.thumbnails/
     rm -rf $dir/Music/.thumbnails/
 
-    lb relmv $dir/Pictures/* $SD/d/90_Now_Viewing/
-    lb relmv $dir/DCIM/* $SD/d/90_Now_Viewing/
+    lb relmv $dir/Pictures/ $SD/d/90_Now_Viewing/
+    lb relmv $dir/DCIM/ $SD/d/90_Now_Viewing/
 end
 
-lb relmv $INT/AudioRecorder/* $INT/Music/Sound\ records/* $SD/d/87_Recordings/
+lb relmv $INT/AudioRecorder/ $INT/Music/Sound\ records/ $SD/d/87_Recordings/
 
-lb relmv $INT/Download/* $SD/d/03_Downloads/
+lb relmv $INT/Download/ $SD/d/03_Downloads/
 
 find $INT/ -empty -type d -delete 2>/dev/null
 mkdir -p $INT/Pictures/
