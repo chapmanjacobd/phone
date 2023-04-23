@@ -27,6 +27,7 @@ for dir in $INT $SD
 
     lb relmv $dir/Pictures/ $SD/d/90_Now_Viewing/
     lb relmv $dir/DCIM/ $SD/d/90_Now_Viewing/
+    lb relmv $dir/Android/media/com.whatsapp/WhatsApp/Media/ $SD/d/90_Now_Viewing/
 end
 
 lb relmv $INT/AudioRecorder/ $INT/Music/Sound\ records/ $SD/d/87_Recordings/
