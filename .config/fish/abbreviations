@@ -15,3 +15,4 @@ abbr -a -- unli 'ssh jacob@unli.xyz -i storage/shared/Android/SECURE/ranch' # im
 abbr -a -- abbr abbrsave
 abbr -a -- relmv lb relmv -v
 abbr -a -- sshh ssh\ pakon\ -t\ tmux\ new-session\ -A\ -s\ phone\ \"\'fish\ -c\ clean_home\;\ exec\ fish\'\"
+abbr -a -- ga git add .
