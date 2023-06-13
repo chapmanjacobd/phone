@@ -12,7 +12,7 @@ abbr -a -- vu 'catt volumeup' # imported from a universal variable, see `help ab
 abbr -a -- tee 'tee -a' # imported from a universal variable, see `help abbr`
 abbr -a -- gr 'git reset' # imported from a universal variable, see `help abbr`
 abbr -a -- unli 'ssh jacob@unli.xyz -i storage/shared/Android/SECURE/ranch' # imported from a universal variable, see `help abbr`
-abbr -a -- abbr abbrsave
 abbr -a -- relmv lb relmv -v
 abbr -a -- sshh ssh\ pakon\ -t\ tmux\ new-session\ -A\ -s\ phone\ \"\'fish\ -c\ clean_home\;\ exec\ fish\'\"
 abbr -a -- ga git add .
+abbr -a -- abbr abbrsave
