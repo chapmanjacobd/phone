@@ -1,7 +1,7 @@
 #!/bin/bash
 termux-setup-storage
 
-pkg install fish wget ffmpeg python coreutils moreutils termux-api curl openssh mpv imagemagick fd socat file jq netcat-openbsd cronie wol python-numpy android-tools rsync fakeroot ripgrep tree ncdu htop exa
+pkg install fish wget ffmpeg python coreutils moreutils termux-api curl openssh mpv imagemagick fd socat file jq netcat-openbsd cronie wol python-numpy android-tools rsync fakeroot ripgrep tree ncdu htop exa rclone
 pip install --upgrade requests pip wheel
 pip install yt-dlp pypyp ipython rich catt sqlite-utils xklb
 
