@@ -18,3 +18,4 @@ abbr -a -- ga git add .
 abbr -a -- abbr abbrsave
 abbr -a -- taxes repeat wt -db /data/data/com.termux/files/home/lb/tax.db -u duration desc -L1 --action ask_move_or_delete --keep-dir /data/data/com.termux/files/home/d/60_Now_Watching/keep/
 abbr -a -- watch repeat wt -L1 --action ask_move_or_delete --keep-dir /data/data/com.termux/files/home/d/70_Now_Watching/Keep/
+abbr -a -- pkginstall aptinstall
