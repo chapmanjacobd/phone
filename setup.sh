@@ -1,9 +1,9 @@
 #!/bin/bash
 termux-setup-storage
 
-apt install $(cat .github/apt_installed)
+apt install $(cat ~/.github/apt_installed)
 pip install --upgrade requests pip wheel
-pip install yt-dlp pypyp ipython rich catt sqlite-utils xklb
+pip install $(cat ~/.github/pip_installed)
 
 for f in ./.shortcuts/tasks/*.sh
 do
