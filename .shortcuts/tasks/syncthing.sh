@@ -30,7 +30,8 @@ for dir in $INT $SD
     rclone move $dir/Android/media/com.whatsapp/WhatsApp/Media/ $SD/d/90_Now_Viewing/
 end
 
-rclone move $INT/AudioRecorder/ $INT/Music/Sound\ records/ $SD/d/87_Recordings/
+rclone move $INT/AudioRecorder/ $SD/d/87_Recordings/
+rclone move $INT/Music/Sound\ records/ $SD/d/87_Recordings/
 
 rclone move $INT/Download/ $SD/d/03_Downloads/
 
