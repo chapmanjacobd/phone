@@ -2,7 +2,7 @@ script-opts=''
 script-opts-append=excerpt-no-pause-on-file-loaded=1
 quiet=yes
 
-volume=70
+volume=80
 volume-max=140
 
 demuxer-seekable-cache=yes
