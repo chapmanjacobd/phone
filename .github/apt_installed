@@ -23,6 +23,7 @@ ripgrep
 rsync
 socat
 termux-api
+tmux
 tree
 wget
 wol
