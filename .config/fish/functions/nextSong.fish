@@ -5,8 +5,7 @@ function nextSong
         rm "$song" &
         echo 'playlist-next force' | socat - $socket
     else if pgrep -f catt
-        rm (cat (dirname (mktemp -u))/catt_playing)
-        catt -d $CHROMECAST_GROUP stop
+        lb next --delete
     else
         ssh pakon -o RemoteCommand=none lb next --delete
     end

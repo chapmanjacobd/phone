@@ -2,7 +2,6 @@
 # VERSION: 3.0
 SETUVAR --export ADB_SERVER_SOCKET:localfilesystem\x3a/data/data/com\x2etermux/files/\x2eadb_socket
 SETUVAR --export ANDROID_NO_USE_FWMARK_CLIENT:1
-SETUVAR --export CHROMECAST_GROUP:Bedroom
 SETUVAR --export EDITOR:nano
 SETUVAR --export MPV_SOCKET:/data/data/com\x2etermux/files/tmp/mpv_socket
 SETUVAR __fish_initialized:3400
