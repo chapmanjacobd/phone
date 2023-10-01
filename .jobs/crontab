@@ -3,5 +3,5 @@
 0   2 * * * rsync ~/lb/audio.db pakon:/tmp/phone.db && ssh pakon -- tmux new-session -d -s playcounts 'lb copy-play-counts /home/xk/lb/audio.db /tmp/phone.db --source-prefix /storage/6E7B-7DCE/d/80_Now_Listening/ --target-prefix /mnt/d/'
 0   4 * * * fish ~/.shortcuts/tasks/syncthing.sh
 0   5 * * * fish -c refreshLibrary
-30  8 * * * ssh xk@192.168.1.114 lt-wakeup
-15 21 * * * ssh xk@192.168.1.114 "lt-search Bedroom 40 relax"
+30  9 * * * ssh xk@192.168.1.114 lt-wakeup
+20 21 * * * ssh xk@192.168.1.114 "lt-search Bedroom 40 relax"
