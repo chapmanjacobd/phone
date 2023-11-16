@@ -21,6 +21,7 @@ python-numpy
 rclone
 ripgrep
 rsync
+rust
 socat
 termux-api
 tmux

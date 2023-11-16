@@ -1,4 +1,5 @@
 /j/
+/.cargo/
 /.local/share/nano/filepos_history
 /.local/share/nano/search_history
 /.wget-hsts
