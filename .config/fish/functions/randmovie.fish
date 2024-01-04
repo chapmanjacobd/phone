@@ -1,3 +1,3 @@
 function randmovie
-    open (randvid . ~/d/70_Now_Watching/)
+    open (randvid . ~/sync/video/)
 end
