@@ -25,15 +25,15 @@ for dir in $INT $SD
     rm -rf $dir/Movies/.thumbnails/
     rm -rf $dir/Music/.thumbnails/
 
-    rclone move $dir/Pictures/ $SD/d/90_Now_Viewing/
-    rclone move $dir/DCIM/ $SD/d/90_Now_Viewing/
-    rclone move $dir/Android/media/com.whatsapp/WhatsApp/Media/ $SD/d/90_Now_Viewing/
+    rclone move $dir/Pictures/ $SD/sync/image/
+    rclone move $dir/DCIM/ $SD/sync/image/
+    rclone move $dir/Android/media/com.whatsapp/WhatsApp/Media/ $SD/sync/image/
 end
 
-rclone move $INT/AudioRecorder/ $SD/d/87_Recordings/
-rclone move $INT/Music/Sound\ records/ $SD/d/87_Recordings/
+rclone move $INT/AudioRecorder/ $SD/sync/audio/recordings/
+rclone move $INT/Music/Sound\ records/ $SD/sync/audio/recordings/
 
-rclone move $INT/Download/ $SD/d/03_Downloads/
+rclone move $INT/Download/ $SD/sync/world/downloads/
 
 find $INT/ -empty -type d -delete 2>/dev/null
 mkdir -p $INT/Pictures/

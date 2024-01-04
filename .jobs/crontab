@@ -1,6 +1,6 @@
 0   1 * * 3 pkg upgrade -y
 30  1 * * * pip install --upgrade xklb
-0   2 * * * rsync ~/lb/audio.db pakon:/tmp/phone.db && ssh pakon -- tmux new-session -d -s playcounts 'lb copy-play-counts /home/xk/lb/audio.db /tmp/phone.db --source-prefix /storage/6E7B-7DCE/d/80_Now_Listening/ --target-prefix /mnt/d/'
+0   2 * * * rsync ~/lb/audio.db pakon:/tmp/phone.db && ssh pakon -- tmux new-session -d -s playcounts 'lb copy-play-counts /home/xk/lb/audio.db /tmp/phone.db --source-prefix /storage/6E7B-7DCE/sync/audio/weekly/ --target-prefix /mnt/d/'
 0   4 * * * fish ~/.shortcuts/tasks/syncthing.sh
 0   5 * * * fish -c refreshLibrary
 30  9 * * * ssh xk@192.168.1.114 lt-wakeup
