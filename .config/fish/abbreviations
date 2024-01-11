@@ -20,3 +20,4 @@ abbr -a -- watch repeat wt -L1 --action ask_move_or_delete --keep-dir /data/data
 abbr -a -- pkginstall aptinstall
 abbr -a -- gd git diff
 abbr -a -- taxes repeat wt -db /data/data/com.termux/files/home/lb/tax.db --portrait -u duration desc -L1 --action ask_move_or_delete --keep-dir /data/data/com.termux/files/home/sync/porn/video/keep/
+abbr -a -- df df -h
