@@ -28,6 +28,8 @@ for dir in $INT $SD
     rclone move $dir/Pictures/ $SD/sync/image/
     rclone move $dir/DCIM/ $SD/sync/image/
     rclone move $dir/Android/media/com.whatsapp/WhatsApp/Media/ $SD/sync/image/
+
+    termux-media-scan -r $dir
 end
 
 rclone move $INT/AudioRecorder/ $SD/sync/audio/recordings/
