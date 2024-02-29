@@ -4,5 +4,5 @@ function mediascan-toggle --argument dir
     else
         touch $dir/.nomedia
     end
-    termux-media-scan -r $dir
+    termux-media-scan $dir
 end
