@@ -10,3 +10,5 @@ end
 if not pgrep -f "crond" >/dev/null
     echo "[Starting crond...]" && crond && echo "[OK]"
 end
+
+zoxide init fish | source
