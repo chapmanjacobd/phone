@@ -1,3 +1,5 @@
+/library
+/.config/htop/htoprc
 /.local/share/zoxide/
 /j/
 /.cargo/
