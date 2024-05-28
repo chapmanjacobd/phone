@@ -1,3 +1,4 @@
+/.local/state/
 /library
 /.config/htop/htoprc
 /.local/share/zoxide/
