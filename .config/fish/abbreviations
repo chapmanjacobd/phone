@@ -23,3 +23,4 @@ abbr -a -- videos repeat wt -db /data/data/com.termux/files/home/lb/video.db -u 
 abbr -a -- sshh ssh\ -4\ pakon\ -t\ tmux\ new-session\ -A\ -s\ phone\ \"\'fish\ -c\ clean_home\;\ exec\ fish\'\"
 abbr -a -- taxes repeat wt -db /data/data/com.termux/files/home/lb/tax.db -u duration desc -L1 --action ask_move_or_delete --keep-dir /data/data/com.termux/files/home/sync/porn/video/keep/ --portrait
 abbr -a -- py python
+abbr -a -- lbr lb-refresh
