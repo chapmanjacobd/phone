@@ -7,5 +7,5 @@ def bfs_files(root_dir):
             yield os.path.join(dirpath, name)
 
 
-for p in bfs_files("."):
+for p in sorted(list(bfs_files(".")), key=lambda s: s.count(os.sep)):
     print(p)

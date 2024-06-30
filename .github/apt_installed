@@ -17,6 +17,7 @@ mpv
 ncdu
 netcat-openbsd
 openssh
+parallel
 python
 python-numpy
 rclone
