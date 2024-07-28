@@ -3,7 +3,7 @@ function schedule
 
     echo $c
     for op in $argv[2..-1]
-        set c (chronocalc "$c + $op")
+        set c (timecalc "$c + $op")
         echo $op $c
     end
 end
