@@ -25,17 +25,17 @@ for dir in $INT $SD
     rm -rf $dir/Movies/.thumbnails/
     rm -rf $dir/Music/.thumbnails/
 
-    rclone move $dir/Pictures/ $SD/sync/image/
-    rclone move $dir/DCIM/ $SD/sync/image/
-    rclone move $dir/Android/media/com.whatsapp/WhatsApp/Media/ $SD/sync/image/
+    lb mv $dir/Pictures/ $SD/sync/image/
+    lb mv $dir/DCIM/ $SD/sync/image/
+    lb mv $dir/Android/media/com.whatsapp/WhatsApp/Media/ $SD/sync/image/
 
     termux-media-scan -r $dir
 end
 
-rclone move $INT/AudioRecorder/ $SD/sync/audio/recordings/
-rclone move $INT/Music/Sound\ records/ $SD/sync/audio/recordings/
+lb mv $INT/AudioRecorder/ $SD/sync/audio/recordings/
+lb mv $INT/Music/Sound\ records/ $SD/sync/audio/recordings/
 
-rclone move $INT/Download/ $SD/sync/world/downloads/
+lb mv $INT/Download/ $SD/sync/world/downloads/
 
 find $INT/ -empty -type d -delete 2>/dev/null
 mkdir -p $INT/Pictures/
