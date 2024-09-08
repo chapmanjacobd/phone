@@ -21,6 +21,7 @@ parallel
 python
 python-numpy
 rclone
+recode
 ripgrep
 rsync
 rust
