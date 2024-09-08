@@ -25,3 +25,5 @@ abbr -a -- taxes repeat wt -db /data/data/com.termux/files/home/lb/tax.db -u dur
 abbr -a -- py python
 abbr -a -- lbr lb-refresh
 abbr -a -- mkdir mkdir -p
+abbr -a -- gds git diff --staged
+abbr -a -- gs git status --untracked-files
