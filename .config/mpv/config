@@ -2,8 +2,11 @@ script-opts=''
 script-opts-append=excerpt-no-pause-on-file-loaded=1
 quiet=yes
 
-volume=80
+volume=100
 volume-max=140
+
+ytdl-raw-options=check-formats=
+ytdl-format=bestaudio[format_id!$=-drc]
 
 demuxer-seekable-cache=yes
 demuxer-max-bytes=50MiB
