@@ -1,1 +1,0 @@
-/data/data/com.termux/files/home/d/00_Metadata/
