@@ -28,3 +28,4 @@ abbr -a -- mkdir mkdir -p
 abbr -a -- gds git diff --staged
 abbr -a -- gs git status --untracked-files
 abbr -a -- grm git restore --staged --worktree
+abbr -a -- ipy ipython
