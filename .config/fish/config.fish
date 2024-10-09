@@ -9,6 +9,7 @@ if status is-interactive
     bind \cY yank
 
     source $__fish_config_dir/abbreviations
+    fish_config theme choose nothing
 end
 
 if not pgrep -f "crond" >/dev/null
