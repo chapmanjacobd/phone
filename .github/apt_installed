@@ -20,6 +20,7 @@ nushell
 openssh
 parallel
 python
+python-lxml
 python-numpy
 rclone
 recode
