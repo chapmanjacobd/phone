@@ -7,3 +7,22 @@
 	directory = /storage/6E7B-7DCE/github/curati
 [pull]
 	rebase = false
+[alias]
+	branches = for-each-ref --sort='authordate' --format='%(authordate:short), %(authorname), %(refname:lstrip=2)'
+	unmerged = for-each-ref --sort='authordate' --format='%(authordate:short), %(authorname), %(refname:lstrip=2)' --no-merged
+	conflicts = !git diff --name-only --diff-filter U
+	edit-conflicts = !git conflicts | xargs -r $(git var GIT_EDITOR)
+	history = log --follow -p --
+	utccommit = !git commit --date="$(date --utc +%Y-%m-%dT%H:%M:%S%z)"
+	amend = !git commit --amend --no-edit && git push -f
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit
+	keep = "!f() { dir=${1:-.}; printf \\*\"\\n\"!.gitignore > \"$dir/.gitignore\"; git add \"$dir\"; }; f"
+	divergence = log --reverse --oneline ..main
+	tags = tag --sort=creatordate --contains
+	reword = commit --amend -m
+[advice]
+	skippedCherryPicks = false
+[branch]
+	sort = -committerdate
+[tag]
+	sort = taggerdate

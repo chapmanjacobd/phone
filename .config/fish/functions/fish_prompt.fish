@@ -44,7 +44,7 @@ function fish_prompt
                 command -sq systemd-detect-virt
                 and systemd-detect-virt -q
             end
-            set prompt_host $usercolor$USER$normal@(set_color $fish_color_host)$hostname$normal":"
+            set prompt_host $usercolor$USER$normal@(set_color $fish_color_host)phone$normal":"
         end
     end
 
