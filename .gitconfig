@@ -5,6 +5,75 @@
 	name = Jacob
 [safe]
 	directory = /storage/6E7B-7DCE/github/curati
+[push]
+	default = current
+	autosetupremote = true
+	followtags = true
+[core]
+	pager = delta --syntax-theme GitHub --max-line-length 1024 # --keep-plus-minus-markers
+#	excludesfile = /home/xk/.gitignore_global
+	preloadindex = true
+	fscache = true
+	eol = lf
+	autocrlf = false
+	logallrefupdates = true
+#	attributesfile = /home/xk/.gitattributes_global
+[transfer]
+    fsckobjects = true
+[fetch]
+    fsckobjects = true
+[receive]
+    fsckObjects = true
+[interactive]
+	diffFilter = delta --color-only
+[diff]
+	algorithm = histogram
+	indentHeuristic = true
+	tool = delta
+	difftool = delta
+    colormoved = zebra
+	context = 5
+[delta]
+    navigate = true
+[diff "sqlite3"]
+    binary = true
+    textconv = "echo .dump | sqlite3"
+[color]
+	ui = auto
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color.grep]
+	match = red normal bold
+	filename = magenta
+	lineNumber = green
+	column = green
+	separator = cyan
+[pull]
+	rebase = merges
+[rebase]
+	autoStash = true
+	autosquash = true
+	updateRefs = true
+	missingCommitsCheck = warn
+[init]
+	defaultBranch = main
+[merge]
+	autoStash = true
+	conflictstyle = zdiff3
+	summary = true
+	diffstat = true
+	log = 50
+[log]
+	date = relative-local
 [pull]
 	rebase = false
 [alias]

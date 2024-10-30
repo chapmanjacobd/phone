@@ -1,3 +1,4 @@
+/.local/share/delta/
 /.local/share/data/
 /.config/nushell/history.txt
 /storage/
