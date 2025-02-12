@@ -3,5 +3,5 @@
 0   2 * * * fish -c lb-sync-phone
 0   4 * * * fish ~/.shortcuts/tasks/syncthing.sh
 0   5 * * * fish -c lb-refresh
-30  8 * * * ssh xk@192.168.1.114 lt-wakeup
-20 21 * * * ssh xk@192.168.1.114 "lt-search Bedroom 40 relax"
+30  9 * * * ssh xk@192.168.1.114 lt-wakeup
+20 22 * * * ssh xk@192.168.1.114 "lt-search Bedroom 40 relax"
