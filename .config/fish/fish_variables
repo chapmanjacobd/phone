@@ -4,7 +4,7 @@ SETUVAR --export ADB_SERVER_SOCKET:localfilesystem\x3a/data/data/com\x2etermux/f
 SETUVAR --export ANDROID_NO_USE_FWMARK_CLIENT:1
 SETUVAR --export EDITOR:nano
 SETUVAR --export MPV_SOCKET:/data/data/com\x2etermux/files/tmp/mpv_socket
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR _fish_abbr_adbpair:fakeroot\x20adb\x20pair\x20192\x2e168\x2e1\x2e242\x3a45492\x20263695
 SETUVAR _fish_abbr_clip:termux\x2dclipboard\x2dset
 SETUVAR _fish_abbr_es:nano\x20/data/data/com\x2etermux/files/home/\x2eshortcuts/tasks/syncthing\x2esh
@@ -42,7 +42,7 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrbl
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
-SETUVAR fish_features:stderr\x2dnocaret\x1eqmark\x2dnoglob\x1eregex\x2deasyesc\x1eampersand\x2dnobg\x2din\x2dtoken
+SETUVAR fish_features:no\x2dkeyboard\x2dprotocols
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1e\x2d\x2ditalics
