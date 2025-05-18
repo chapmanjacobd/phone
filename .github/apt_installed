@@ -9,6 +9,7 @@ fd
 ffmpeg
 file
 fish
+fzf
 git-delta
 htop
 imagemagick
@@ -30,6 +31,7 @@ rsync
 rust
 socat
 termux-api
+termux-services
 tmux
 tree
 unar
