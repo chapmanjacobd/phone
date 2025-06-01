@@ -31,6 +31,7 @@ rsync
 rust
 socat
 termux-api
+termux-gui-package
 termux-services
 tmux
 tree
