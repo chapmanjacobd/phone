@@ -30,3 +30,4 @@ abbr -a -- gs git status --untracked-files
 abbr -a -- grm git restore --staged --worktree
 abbr -a -- ipy ipython
 abbr -a -- mkcdtemp 'cd (mktemp -d)'
+abbr -a -- zj z j
