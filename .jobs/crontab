@@ -1,5 +1,5 @@
 0   1 * * 3 pkg upgrade -y
-30  1 * * * pip install --upgrade xklb
+30  1 * * * pip install --upgrade library
 0   2 * * * fish -c lb-sync-phone
 0   4 * * * fish ~/.shortcuts/tasks/syncthing.sh
 0   5 * * * fish -c lb-refresh
