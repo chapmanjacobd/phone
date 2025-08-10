@@ -1,8 +1,12 @@
 android-tools
 aria2
+bash-completion
+binutils
+cmake
 coreutils
 cronie
 curl
+dnsutils
 eza
 fakeroot
 fd
@@ -14,6 +18,8 @@ git-delta
 htop
 imagemagick
 jq
+man
+mlocate
 moreutils
 mpv
 ncdu
@@ -33,10 +39,12 @@ socat
 termux-api
 termux-gui-package
 termux-services
+termux-tools
+termux-x11
 tmux
 tree
 unar
-wget
+wget2
 wol
 zbar
 zoxide
