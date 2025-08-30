@@ -13,8 +13,12 @@ function wip
     git add .
     git --no-pager diff HEAD
     git diff --stat HEAD
+    echo
+    git status
+    echo
+    wip_message.py --staged
     if count $argv >/dev/null; or confirm
-        git commit -m wip
+        git commit -m "$(wip_message.py --staged)"
         git pull
         git push
     end
