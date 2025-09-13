@@ -34,3 +34,4 @@ abbr -a -- zj z j
 abbr -a -- log logcat
 abbr -a -- wipam git amend
 abbr -a -- tmux tmux new-session -A -s phone
+abbr -a -- pkguninstall aptuninstall
