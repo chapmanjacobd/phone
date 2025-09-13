@@ -2,7 +2,7 @@
 termux-wake-lock
 
 pkill crond; rm ../usr/var/run/crond.pid
-sv up crond
+crond
 
 . $PREFIX/etc/profile
 
