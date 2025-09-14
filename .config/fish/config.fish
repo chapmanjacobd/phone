@@ -1,8 +1,7 @@
 status job-control full  # https://github.com/fish-shell/fish-shell/issues/5036
 
-sv up crond
 if not pgrep -f crond >/dev/null
-    echo "[Starting crond...]" && crond && echo "[OK]"
+    crond
 end
 
 if not status --is-interactive

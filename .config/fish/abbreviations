@@ -35,3 +35,4 @@ abbr -a -- log logcat
 abbr -a -- wipam git amend
 abbr -a -- tmux tmux new-session -A -s phone
 abbr -a -- pkguninstall aptuninstall
+abbr -a -- refresh-sdcard am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard
