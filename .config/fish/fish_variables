@@ -3,6 +3,7 @@
 SETUVAR --export ADB_SERVER_SOCKET:localfilesystem\x3a/data/data/com\x2etermux/files/\x2eadb_socket
 SETUVAR --export ANDROID_NO_USE_FWMARK_CLIENT:1
 SETUVAR --export EDITOR:nano
+SETUVAR --export --path LOCATE_PATH:/data/data/com\x2etermux/files/usr/var/mlocate/shared\x2edb\x1e/data/data/com\x2etermux/files/usr/var/mlocate/external\x2edb
 SETUVAR --export MPV_SOCKET:/data/data/com\x2etermux/files/tmp/mpv_socket
 SETUVAR __fish_initialized:3800
 SETUVAR _fish_abbr_adbpair:fakeroot\x20adb\x20pair\x20192\x2e168\x2e1\x2e242\x3a45492\x20263695
