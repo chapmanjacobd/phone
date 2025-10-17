@@ -1,7 +1,8 @@
 0   1 * * 3 pkg upgrade -y
-30  1 * * * pip install --upgrade library
+30  1 * * * pip install --upgrade --pre library yt-dlp[default,curl-cffi]
 0   2 * * * fish -c lb-sync-phone
 0   4 * * * fish ~/.shortcuts/tasks/syncthing.sh
 0   5 * * * fish -c lb-refresh
+0   6 * * * fish -c updatedb
 30  9 * * * ssh xk@192.168.1.114 lt-wakeup
 20 22 * * * ssh xk@192.168.1.114 "lt-search Bedroom 40 relax"
