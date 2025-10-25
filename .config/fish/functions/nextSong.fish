@@ -7,7 +7,7 @@ function nextSong
     else if pgrep -f catt
         lb next --delete
     else
-        ssh xk@98.206.212.246 -p 564 -o RemoteCommand=none lb next --delete
+        ssh xk@bababushka.duckdns.org -p 564 -o RemoteCommand=none lb next --delete
     end
 
 end
