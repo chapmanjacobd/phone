@@ -17,13 +17,15 @@ fish_config theme choose nothing
 
 source ~/.config/fish/functions/ls.fish
 
-fzf_configure_bindings --variables
+fzf_configure_bindings --directory=\cf --git_status=\cs --processes=\cp
+_env_vars_update_servers
 
 bind ctrl-backspace backward-kill-word
 bind ctrl-left backward-word
 bind ctrl-right forward-word
 bind ctrl-delete kill-word
 
+# https://github.com/fish-shell/fish-shell/issues/10926#issuecomment-2689671305
 bind alt-backspace backward-kill-token
 bind alt-right nextd-or-forward-token
 bind alt-left prevd-or-backward-token
@@ -35,11 +37,11 @@ bind \e\[99\;6u fish_clipboard_copy
 
 bind \e, kill-selection backward-kill-token yank yank
 
-bind ctrl-y redo  # for ctrl-z
+bind ctrl-y redo
 bind alt-y yank
 bind ctrl-u yank
-bind ctrl-l kill-line
-bind ctrl-k backward-kill-line
+bind ctrl-k kill-line
+bind ctrl-l backward-kill-line
 
 bind ctrl-t transpose-words
 
@@ -80,26 +82,15 @@ function _abbr_parallel
 end
 abbr -a parallel --function _abbr_parallel
 
-function _abbr_wtv
-    echo (cat ~/watch | strip | shuf -n 1)
-end
-abbr -a wtv --function _abbr_wtv
-
-function _abbr_ltv
-    echo (cat ~/listen | strip | shuf -n 1)
-end
-abbr -a ltv --function _abbr_ltv
-
-function _abbr_lnv
-    echo (cat ~/links | strip | shuf -n 1)
-end
-abbr -a lnv --function _abbr_lnv
+abbr_random_line wtv ~/watch
+abbr_random_line ltv ~/listen
+abbr_random_line links ~/links
 
 function _abbr_ltc
-    if grep Bedroom ~/.config/catt/catt.cfg >/dev/null
-        echo 'cr && lt -c -t Bedroom'
+    if test (hostname) = len
+        echo 'catt.default Bedroom; cr && lt -c -t Bedroom'
     else
-        echo 'cr && lt -c'
+        echo 'catt.default Xylo and Orchestra; cr && lt -c'
     end
 end
 abbr -a ltc --function _abbr_ltc

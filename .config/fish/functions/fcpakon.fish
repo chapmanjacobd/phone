@@ -1,3 +1,3 @@
 function fcpakon
-    scp pakon:.config/fish/functions/"$argv" ~/.config/fish/functions/
+    scp pakon:"$argv" (path dirname "$argv")
 end
