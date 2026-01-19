@@ -28,3 +28,4 @@ SETUVAR _fisher_plugins:jorgebucaran/fisher\x1epatrickf1/fzf\x2efish\x1ejorgebuc
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_features:no\x2dkeyboard\x2dprotocols
 SETUVAR fish_user_paths:/data/data/com\x2etermux/files/home/go/bin\x1e/data/data/com\x2etermux/files/home/bin\x1e/data/data/com\x2etermux/files/home/\x2eshortcuts/tasks
+SETUVAR --export servers:\x1d
