@@ -1,0 +1,46 @@
+#!/usr/bin/python3
+import argparse
+import signal
+import subprocess
+import sys
+import time
+
+from library.utils import argparse_utils
+
+
+def tmux_waitgroup(args):
+    panes = []
+
+    def cleanup(sig, frame):
+        for p_id in panes:
+            subprocess.run(["tmux", "kill-pane", "-t", p_id], capture_output=True)
+        sys.exit(0)
+
+    signal.signal(signal.SIGINT, cleanup)
+    signal.signal(signal.SIGTERM, cleanup)
+
+    for cmd in args.cmds:
+        res = subprocess.run(
+            ["tmux", "new-window", "-d", "-P", "-F", "#{pane_id}", "--", cmd], capture_output=True, text=True
+        )
+        if res.stdout:
+            panes.append(res.stdout.strip())
+
+    while panes:
+        for i, p_id in enumerate(panes):
+            check = subprocess.run(["tmux", "has-session", "-t", p_id], capture_output=True)
+            if check.returncode != 0:
+                panes.pop(i)
+                break
+
+        time.sleep(args.interval)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--interval", type=float, default=0.2)
+
+    parser.add_argument("cmds", nargs="*", default=argparse_utils.STDIN_DASH, action=argparse_utils.ArgparseArgsOrStdin)
+    args = parser.parse_args()
+
+    tmux_waitgroup(args)
