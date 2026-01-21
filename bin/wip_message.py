@@ -138,6 +138,8 @@ def format_single_file_message(args, filename):
         is_short_change = len(diff_line) < 120
         if is_short_change:
             return f"{os.path.basename(filename)}: {diff_line}"
+    elif " -> " in filename:
+        return "Renamed " + filename
 
     diff_stats = get_diff_stats(args, filename)
     if diff_stats:
