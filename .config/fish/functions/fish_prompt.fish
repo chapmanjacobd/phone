@@ -31,10 +31,6 @@ function fish_prompt
         set cwd (set_color $col)
     end
 
-    # Prompt status only if it's not 0
-    set -l prompt_status
-    test $last_status -ne 0; and set prompt_status (set_color $fish_color_error)"[$last_status]$normal"
-
     # Only show host if in SSH or container
     # Store this in a global variable because it's slow and unchanging
     if not set -q prompt_host
@@ -51,5 +47,5 @@ function fish_prompt
     # Shorten pwd if prompt is too long
     set -l pwd (prompt_pwd)
 
-    echo -n -s $prompt_host $cwd $pwd $normal $prompt_status $delim
+    echo -n -s $prompt_host $cwd $pwd $normal $delim
 end
