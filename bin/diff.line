@@ -1,0 +1,41 @@
+#!/usr/bin/python3
+import argparse
+import difflib
+import sys
+
+def process_diff(args):
+    # args: dict containing 'file'
+    seen_lines = {}
+    prev_line = ""
+
+    with open(args['file'], 'r') as f:
+        for i, line in enumerate(f, 1):
+            line = line.rstrip('\n')
+            
+            # Check for global duplicates
+            if line in seen_lines:
+                print(f"{seen_lines[line]:<4} | (Duplicate of line {seen_lines[line]})")
+                prev_line = line
+                continue
+            
+            seen_lines[line] = i
+            
+            # Calculate unique differences from previous line
+            # ndiff returns: '- ' for removals, '+ ' for additions, '  ' for common
+            diff = list(difflib.ndiff([prev_line], [line]))
+            
+            old_unique = "".join(l[2:] for l in diff if l.startswith('- '))
+            new_unique = "".join(l[2:] for l in diff if l.startswith('+ '))
+
+            if old_unique:
+                print(f"     | -{old_unique}")
+            print(f"     | +{new_unique}")
+            
+            prev_line = line
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Diff consecutive lines and flag global duplicates.")
+    parser.add_argument("file", help="Path to the text file")
+    
+    parsed_args = parser.parse_args()
+    process_diff(vars(parsed_args))
