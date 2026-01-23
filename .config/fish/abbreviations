@@ -37,3 +37,4 @@ abbr -a -- tmux tmux new-session -A -s phone
 abbr -a -- pkguninstall aptuninstall
 abbr -a -- refresh-sdcard am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard
 abbr -a -- editcb 'cb | vipe | cb'
+abbr -a -- skipworktree 'git update-index --skip-worktree --'
