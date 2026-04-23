@@ -38,3 +38,4 @@ abbr -a -- refresh-sdcard am broadcast -a android.intent.action.MEDIA_MOUNTED -d
 abbr -a -- editcb 'cb | vipe | cb'
 abbr -a -- skipworktree 'git update-index --skip-worktree --'
 abbr -a -- taxes repeat wt -db /data/data/com.termux/files/home/lb/tax.db -u duration desc -L1 --action ask_move_or_delete --keep-dir /storage/6E7B-7DCE/sync/porn/video/keep/ --portrait
+abbr -a -- lbu lb-refresh
