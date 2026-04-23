@@ -2,7 +2,7 @@
 
 pkill pulseaudio
 pkill virgl_test_server_android
-pkill -9 -f termux.x11
+pkill -f termux.x11 || pkill -9 -f termux.x11
 
 am start --user 0 -n com.termux.x11/com.termux.x11.MainActivity
 XDG_RUNTIME_DIR=${TMPDIR}
