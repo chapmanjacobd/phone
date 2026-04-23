@@ -28,6 +28,7 @@ netcat-openbsd
 nushell
 openssh
 parallel
+pulseaudio
 python
 python-lxml
 python-numpy
