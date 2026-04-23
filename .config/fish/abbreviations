@@ -41,3 +41,4 @@ abbr -a -- taxes repeat wt -db /data/data/com.termux/files/home/lb/tax.db -u dur
 abbr -a -- lbu lb-refresh
 abbr -a -- startx .shortcuts/tasks/startarchgui.sh
 abbr -a -- pstree pstree -alpTs
+abbr -a -- less less -S
