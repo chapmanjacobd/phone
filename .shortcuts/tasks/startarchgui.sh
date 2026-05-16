@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 
 pkill pulseaudio
 pkill virgl_test_server_android

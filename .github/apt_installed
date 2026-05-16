@@ -32,6 +32,7 @@ pulseaudio
 python
 python-lxml
 python-numpy
+python-psutil
 rclone
 recode
 ripgrep
