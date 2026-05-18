@@ -16,30 +16,33 @@ for f in ~/.shortcuts/icons/*.png
 end
 
 set INT /sdcard
+set SD ~/ext
 
-rm -rf $INT/Pictures/.thumbnails/
-rm -rf $INT/Pictures/Instagram/
-rm -rf $INT/Movies/Instagram/
-rm -rf $INT/Movies/.thumbnails/
-rm -rf $INT/Music/.thumbnails/
+for dir in $INT $SD
+    rm -rf $dir/Pictures/.thumbnails/
+    rm -rf $dir/Pictures/Instagram/
+    rm -rf $dir/Movies/Instagram/
+    rm -rf $dir/Movies/.thumbnails/
+    rm -rf $dir/Music/.thumbnails/
 
-lb mv $INT/Pictures/ $INT/sync/image/
-lb mv $INT/DCIM/ $INT/sync/image/
-lb mv $INT/Android/media/com.whatsapp/WhatsApp/Media/ $INT/sync/image/
+    lb mv $dir/Pictures/ $SD/sync/image/
+    lb mv $dir/DCIM/ $SD/sync/image/
+    lb mv $dir/Android/media/com.whatsapp/WhatsApp/Media/ $SD/sync/image/
 
-termux-media-scan -r $INT
+    termux-media-scan -r $dir
+end
 
-lb mv $INT/AudioRecorder/ $INT/sync/audio/recordings/
-lb mv $INT/Music/Sound\ records/ $INT/sync/audio/recordings/
+lb mv $INT/AudioRecorder/ $SD/sync/audio/recordings/
+lb mv $INT/Music/Sound\ records/ $SD/sync/audio/recordings/
 
-lb mv $INT/Download/ $INT/sync/world/downloads/
+lb mv $INT/Download/ $SD/sync/world/downloads/
 
 find $INT/ -empty -type d -delete 2>/dev/null
 mkdir -p $INT/Pictures/
 mkdir -p $INT/Download/
 
-find $INT/ -empty -type d -delete 2>/dev/null
-cd ~/mc && git add .
+find $SD/ -empty -type d -delete 2>/dev/null
+cd $SD/github/curati && git add .
 git commit -m wip
 git pull
 git push
