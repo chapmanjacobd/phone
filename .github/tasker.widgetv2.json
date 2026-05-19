@@ -1,0 +1,77 @@
+{
+  "scrolling": false,
+  "children": [
+    {
+      "children": [
+        {
+          "buttonType": "Square",
+          "contentColor": "primary",
+          "icon": "android.resource://net.dinglisch.android.taskerm/drawable/mw_av_volume_down",
+          "backgroundColor": "background",
+          "cornerRadius": 0,
+          "task": "CattVolDown",
+          "type": "IconButton",
+          "useMaterialYouColors": false
+        },
+        {
+          "buttonType": "Square",
+          "contentColor": "primary",
+          "icon": "android.resource://net.dinglisch.android.taskerm/drawable/mw_av_volume_up",
+          "backgroundColor": "background",
+          "cornerRadius": 0,
+          "type": "IconButton"
+        },
+        {
+          "buttonType": "Square",
+          "contentColor": "primary",
+          "icon": "android.resource://net.dinglisch.android.taskerm/drawable/mw_image_musnote",
+          "backgroundColor": "background",
+          "task": "OtherMusic",
+          "type": "IconButton"
+        },
+        {
+          "contentColor": "primary",
+          "icon": "android.resource://net.dinglisch.android.taskerm/drawable/mw_notification_ondemand_video",
+          "backgroundColor": "background",
+          "size": {
+            "fillMaxHeight": true
+          },
+          "task": "wt",
+          "type": "IconButton"
+        },
+        {
+          "buttonType": "Square",
+          "contentColor": "primary",
+          "icon": "android.resource://net.dinglisch.android.taskerm/drawable/mw_av_skip_next",
+          "backgroundColor": "background",
+          "task": "Next Music",
+          "type": "IconButton"
+        },
+        {
+          "buttonType": "Square",
+          "contentColor": "primary",
+          "icon": "android.resource://net.dinglisch.android.taskerm/drawable/mw_device_screen_lock_portrait",
+          "backgroundColor": "background",
+          "isWeighted": false,
+          "size": {
+            "fillMaxHeight": true
+          },
+          "task": "screenoff",
+          "type": "IconButton"
+        }
+      ],
+      "horizontalAlignment": "Center",
+      "verticalAlignment": "Center",
+      "backgroundColor": "background",
+      "size": "fill",
+      "type": "Row",
+      "visibility": "Visible"
+    }
+  ],
+  "horizontalAlignment": "Center",
+  "verticalAlignment": "Center",
+  "isWeighted": false,
+  "size": "fill",
+  "type": "Column",
+  "useMaterialYouColors": true
+}
