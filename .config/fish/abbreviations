@@ -37,7 +37,6 @@ abbr -a -- pkguninstall aptuninstall
 abbr -a -- refresh-sdcard am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard
 abbr -a -- editcb 'cb | vipe | cb'
 abbr -a -- skipworktree 'git update-index --skip-worktree --'
-abbr -a -- taxes repeat wt -db /data/data/com.termux/files/home/lb/tax.db -u duration desc -L1 --action ask_move_or_delete --keep-dir /storage/6E7B-7DCE/sync/porn/video/keep/ --portrait
 abbr -a -- lbu lb-refresh
 abbr -a -- startx .shortcuts/tasks/startarchgui.sh
 abbr -a -- pstree pstree -alpTs
@@ -47,3 +46,4 @@ abbr -a -- gin git add --intent-to-add .
 abbr -a -- gap git add --patch
 abbr -a -- fcpakon funccp.pakon
 abbr -a -- c commit
+abbr -a -- taxes repeat wt -db /data/data/com.termux/files/home/lb/tax.db -u duration desc -L1 --action ask_move_or_delete --keep-dir /storage/emulated/0/sync/porn/video/keep/ --portrait
