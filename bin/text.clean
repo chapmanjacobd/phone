@@ -1,0 +1,87 @@
+#!/usr/bin/python3
+import argparse
+import re
+import sys
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(
+        description="Clean and reformat messy clipboard text."
+    )
+    parser.add_argument(
+        "--strip-chars",
+        default="┃┃|│",
+        help="Characters to strip from the text",
+    )
+    parser.add_argument(
+        "--min-blank-lines",
+        type=int,
+        default=3,
+        help="Minimum blank lines to trigger a paragraph break",
+    )
+    return parser.parse_args()
+
+def clean_text(args_dict: dict) -> str:
+    text = args_dict["text"]
+    strip_pattern = f"[{re.escape(args_dict['strip_chars'])}]"
+    
+    # Pre-clean characters and trailing whitespace
+    lines = [re.sub(strip_pattern, "", l).rstrip() for l in text.splitlines()]
+    
+    processed_blocks = []
+    current_block = ""
+    current_indent = ""
+
+    # Regex for start of markdown elements (lists, numbers, headers, blockquotes)
+    md_start_re = r"^(\s*)([-*+>]|\d+\.|#+)\s+"
+
+    for line in lines:
+        if not line.strip():
+            if current_block:
+                processed_blocks.append(current_indent + current_block)
+                current_block = ""
+            processed_blocks.append("")  # Preserve intended blank lines
+            continue
+
+        match = re.match(md_start_re, line)
+        if match:
+            # New markdown block detected: flush previous block
+            if current_block:
+                processed_blocks.append(current_indent + current_block)
+            
+            current_indent = match.group(1)
+            marker = match.group(2)
+            # Content without the marker/indent prefix
+            content = line[len(current_indent) + len(marker):].strip()
+            current_block = f"{marker} {re.sub(r' {2,}', ' ', content)}"
+        else:
+            # Continuation line
+            cleaned_line = re.sub(r" {2,}", " ", line.strip())
+            if current_block:
+                current_block = f"{current_block} {cleaned_line}"
+            else:
+                current_block = cleaned_line
+                current_indent = ""
+
+    if current_block:
+        processed_blocks.append(current_indent + current_block)
+
+    # Reconstruct text and collapse extra blank lines based on configuration
+    raw_content = "\n".join(processed_blocks)
+    collapsed = re.sub(r"\n{3,}", "\n\n", raw_content)
+    return collapsed.strip()
+
+def main():
+    args = parse_arguments()
+    input_text = sys.stdin.read()
+    if not input_text.strip():
+        return
+    config = {
+        "text": input_text,
+        "strip_chars": args.strip_chars,
+        "min_blank_lines": args.min_blank_lines,
+    }
+    result = clean_text(config)
+    print(result)
+
+if __name__ == "__main__":
+    main()
