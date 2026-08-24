@@ -8,6 +8,7 @@ coreutils
 cronie
 curl
 dnsutils
+exiftool
 eza
 fakeroot
 fd
