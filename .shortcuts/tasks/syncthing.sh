@@ -29,6 +29,13 @@ lb mv $INT/Android/media/com.whatsapp/WhatsApp/Media/ $INT/sync/image/
 
 termux-media-scan -r $INT
 
+set imageRoot $INT/sync/image
+exiftool -r -d "$imageRoot/%Y-%m-%d" \
+    -ext jpg -ext jpeg -ext png -ext webp -ext heic -ext heif -ext avif -ext gif -ext tif -ext tiff -ext jxl \
+    '-Directory<FileModifyDate' '-Directory<CreateDate' '-Directory<DateTimeOriginal' \
+    $imageRoot
+lb process-image -y $imageRoot
+
 lb mv $INT/AudioRecorder/ $INT/sync/audio/recordings/
 lb mv $INT/Music/Sound\ records/ $INT/sync/audio/recordings/
 
