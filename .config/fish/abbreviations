@@ -17,16 +17,13 @@ abbr -a -- ga git add .
 abbr -a -- abbr abbrsave
 abbr -a -- watch repeat wt -L1 --action ask_move_or_delete --keep-dir /data/data/com.termux/files/home/sync/video/keep/
 abbr -a -- pkginstall aptinstall
-abbr -a -- gd git diff
 abbr -a -- df df -h
 abbr -a -- videos repeat wt -db /data/data/com.termux/files/home/lb/video.db -u duration desc --fetch-siblings each -L1 --action ask_move_or_delete --keep-dir /data/data/com.termux/files/home/sync/video/keep/
 abbr -a -- sshh ssh\ -4\ pakon\ -t\ tmux\ new-session\ -A\ -s\ phone\ \"\'fish\ -c\ home.clean\;\ exec\ fish\'\"
 abbr -a -- py python
 abbr -a -- lbr lb-refresh
 abbr -a -- mkdir mkdir -p
-abbr -a -- gds git diff --staged
 abbr -a -- gs git status --untracked-files
-abbr -a -- grm git restore --staged --worktree
 abbr -a -- ipy ipython
 abbr -a -- mkcdtemp 'cd (mktemp -d)'
 abbr -a -- zj z j
@@ -47,3 +44,4 @@ abbr -a -- gap git add --patch
 abbr -a -- fcpakon funccp.pakon
 abbr -a -- c commit
 abbr -a -- taxes repeat wt -db /data/data/com.termux/files/home/lb/tax.db -u duration desc -L1 --action ask_move_or_delete --keep-dir /storage/emulated/0/sync/porn/video/keep/ --portrait
+abbr -a -- grm git restore --staged --worktree --
