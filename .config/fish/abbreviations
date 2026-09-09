@@ -45,3 +45,5 @@ abbr -a -- fcpakon funccp.pakon
 abbr -a -- c commit
 abbr -a -- taxes repeat wt -db /data/data/com.termux/files/home/lb/tax.db -u duration desc -L1 --action ask_move_or_delete --keep-dir /storage/emulated/0/sync/porn/video/keep/ --portrait
 abbr -a -- grm git restore --staged --worktree --
+abbr -a -- pkill pkill -f
+abbr -a -- pgrep pgrep -fa
