@@ -1,6 +1,6 @@
 function randmusic
-    if pgrep mpv >/dev/null
-        pkill mpv
+    if pgrep -f mpv >/dev/null
+        pkill -f mpv
     else
         lt
     end
