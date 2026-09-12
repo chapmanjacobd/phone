@@ -1,5 +1,5 @@
 function nextSong
-    if pgrep mpv
+    if pgrep -f mpv
         set socket (dirname (mktemp -u))/mpv_socket
         set song (echo '{ "command": ["get_property", "path"] }' | socat - $socket | jq -r .data)
         rm "$song" &
