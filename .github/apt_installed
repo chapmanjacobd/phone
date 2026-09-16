@@ -3,6 +3,7 @@ aria2
 bash-completion
 bat
 binutils
+build-essential
 cmake
 coreutils
 cronie
@@ -24,6 +25,7 @@ htop
 imagemagick
 jq
 man
+mesa-dev
 mlocate
 moreutils
 mpv
@@ -33,6 +35,7 @@ nmap
 nushell
 openssh
 parallel
+pkg-config
 pulseaudio
 python
 python-lxml
