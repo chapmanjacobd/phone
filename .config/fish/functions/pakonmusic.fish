@@ -1,7 +1,7 @@
 function pakonmusic
-    if ssh xk@192.168.1.114 pgrep 'lb listen' >/dev/null
-        ssh xk@192.168.1.114 lt-stop
+    if ssh -o BatchMode=yes -o ConnectTimeout=3 pakon "pgrep -f 'lb (listen|lt)'"
+        ssh pakon lt.stop
     else
-        ssh xk@192.168.1.114 lt-start
+        ssh pakon lt.start
     end
 end
