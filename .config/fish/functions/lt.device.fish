@@ -5,7 +5,7 @@ function lt.device --argument host
             echo Bedroom
         case pakon
             echo Kitchen
-        case phone
+        case phone localhost
             echo Bathroom
         case '*'
             echo Bedroom

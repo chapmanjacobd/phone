@@ -1,3 +1,3 @@
 function shower
-    lt -ct Bathroom -T 14mins
+    lt -ct Bathroom -T 14mins --ignore-errors
 end
