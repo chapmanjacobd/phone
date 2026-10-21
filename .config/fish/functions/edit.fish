@@ -1,4 +1,4 @@
 function edit
     nano "$argv"
-    lb relcp "$argv" ~/.termux/prefix/ --relative-to=$PREFIX
+    lb folder merge relative-copy "$argv" ~/.termux/prefix/ --relative-to=$PREFIX
 end

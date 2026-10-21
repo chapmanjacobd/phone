@@ -1,4 +1,4 @@
 function randmovie
-    lb pause
+    lb playback pause
     open (randvid . ~/sync/video/)
 end

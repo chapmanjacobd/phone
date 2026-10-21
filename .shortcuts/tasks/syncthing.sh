@@ -23,9 +23,9 @@ rm -rf $INT/Movies/Instagram/
 rm -rf $INT/Movies/.thumbnails/
 rm -rf $INT/Music/.thumbnails/
 
-lb mv $INT/Pictures/ $INT/sync/image/
-lb mv $INT/DCIM/ $INT/sync/image/
-lb mv $INT/Android/media/com.whatsapp/WhatsApp/Media/ $INT/sync/image/
+lb folder merge move $INT/Pictures/ $INT/sync/image/
+lb folder merge move $INT/DCIM/ $INT/sync/image/
+lb folder merge move $INT/Android/media/com.whatsapp/WhatsApp/Media/ $INT/sync/image/
 
 termux-media-scan -r $INT
 
@@ -34,12 +34,12 @@ exiftool -r -d "$imageRoot/%Y-%m-%d" \
     -ext jpg -ext jpeg -ext png -ext webp -ext heic -ext heif -ext avif -ext gif -ext tif -ext tiff -ext jxl \
     '-Directory<FileModifyDate' '-Directory<CreateDate' '-Directory<DateTimeOriginal' \
     $imageRoot
-lb process-image -y $imageRoot
+lb shrink image -y $imageRoot
 
-lb mv $INT/AudioRecorder/ $INT/sync/audio/recordings/
-lb mv $INT/Music/Sound\ records/ $INT/sync/audio/recordings/
+lb folder merge move $INT/AudioRecorder/ $INT/sync/audio/recordings/
+lb folder merge move $INT/Music/Sound\ records/ $INT/sync/audio/recordings/
 
-lb mv $INT/Download/ $INT/sync/world/downloads/
+lb folder merge move $INT/Download/ $INT/sync/world/downloads/
 
 find $INT/ -empty -type d -delete 2>/dev/null
 mkdir -p $INT/Pictures/
