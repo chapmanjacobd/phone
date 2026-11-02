@@ -1,6 +1,13 @@
 #!/usr/bin/fish
 
-if test -t 0
+# -r/--get forces the read path; `ssh host cb -r` has a pipe on stdin, which
+# would otherwise fall into the write branch and clobber the clipboard.
+set -l get 0
+if test (count $argv) -gt 0
+    string match -qr '^(-r|--get)$' -- $argv; and set get 1
+end
+
+if test -t 0; or test $get = 1
     termux-clipboard-get
 else
     termux-clipboard-set
