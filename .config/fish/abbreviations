@@ -19,7 +19,6 @@ abbr -a -- watch repeat wt -L1 --action ask_move_or_delete --keep-dir /data/data
 abbr -a -- pkginstall aptinstall
 abbr -a -- df df -h
 abbr -a -- videos repeat wt -db /data/data/com.termux/files/home/lb/video.db -u duration desc --fetch-siblings each -L1 --action ask_move_or_delete --keep-dir /data/data/com.termux/files/home/sync/video/keep/
-abbr -a -- sshh ssh\ -4\ pakon\ -t\ tmux\ new-session\ -A\ -s\ phone\ \"\'fish\ -c\ home.clean\;\ exec\ fish\'\"
 abbr -a -- py python
 abbr -a -- lbr lb-refresh
 abbr -a -- mkdir mkdir -p
@@ -47,3 +46,4 @@ abbr -a -- taxes repeat wt -db /data/data/com.termux/files/home/lb/tax.db -u dur
 abbr -a -- grm git restore --staged --worktree --
 abbr -a -- pkill pkill -f
 abbr -a -- pgrep pgrep -fa
+abbr -a -- sshh 'ssh pakon -t tmux new-session -A -s phone "\'fish -c home.clean; exec fish\'"'
