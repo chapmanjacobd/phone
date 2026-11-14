@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/sh
+# Start sshd, but first wait for the tailnet address it binds to.
+# sshd_config.d/99-lockdown.conf sets ListenAddress to this tailnet IP, which
+# does not exist at boot until Tailscale has created its tun interface.
+# After 5 minutes, try anyway; runsv restarts this script if it still fails.
+prefix=/data/data/com.termux/files/usr
+tailnet_ip=100.114.32.4
+i=0
+while [ "$i" -lt 300 ]; do
+    if "$prefix"/bin/ifconfig 2>/dev/null | "$prefix"/bin/grep -q "inet $tailnet_ip"; then
+        break
+    fi
+    i=$((i + 1))
+    "$prefix"/bin/sleep 1
+done
+exec "$prefix"/bin/sshd -D -e 2>&1
