@@ -1,4 +1,8 @@
 function edit
+    set sp (string replace -- "$PREFIX" "$HOME/.termux/prefix" (path resolve "$argv"))
+
     nano "$argv"
-    lb folder merge relative-copy "$argv" ~/.termux/prefix/ --relative-to=$PREFIX
+
+    mkdir -p (path dirname "$sp")
+    cp -p "$argv" "$sp"
 end
