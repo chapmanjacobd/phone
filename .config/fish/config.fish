@@ -123,3 +123,6 @@ abbr 4DIRS --set-cursor=! "$(string join \n -- 'for dir in */' 'cd $dir' '!' 'cd
 zoxide init fish | source
 
 set fish_color_host_remote (~/bin/str_rgb.py $hostname)
+
+# opencode
+fish_add_path /data/data/com.termux/files/home/.opencode/bin
