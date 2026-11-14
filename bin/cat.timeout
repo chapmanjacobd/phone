@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+# https://gitlab.com/hydrargyrum/attic/-/blob/master/tail.wait/tail.wait
+# SPDX-License-Identifier: WTFPL
+
+import sys
+import os
+import time
+import signal
+import locale
+
+
+def read_file(filename,
+              sleep_time=1, end_after_inactivity_iter=5,
+              suggested_block_size=4096):
+	"""Generates data of a growing file.
+
+	Yields blocks of data.
+	When file end is reached, it waits `sleep_time` seconds
+	`end_after_inactivity_iter` times. If file has no more data within
+	that period, the generator ends.
+	"""
+
+	def _read_some():
+		for _ in range(end_after_inactivity_iter):
+			block = f.read(suggested_block_size)
+			if block:
+				return block
+			time.sleep(sleep_time)
+
+	with open(filename, 'rb') as f:
+		while True:
+			block = _read_some()
+			if block:
+				yield block
+			else:
+				break
+
+
+def _quit(signum, stack):
+	sys.exit(1)
+
+
+def main():
+	locale.setlocale(locale.LC_ALL, '')
+
+	if len(sys.argv) != 2 or sys.argv[1] in {'-h', '--help'}:
+		print('usage: %s FILE' % sys.argv[0], file=sys.stderr)
+		sys.exit(os.EX_USAGE)
+
+	signal.signal(signal.SIGINT, _quit)
+	try:
+		for block in read_file(sys.argv[1]):
+			sys.stdout.buffer.write(block)
+	except BrokenPipeError:
+		sys.exit(os.EX_IOERR)
+	except FileNotFoundError:
+		print('%s: %s: No such file or directory' % (sys.argv[0], sys.argv[1]), file=sys.stderr)
+		sys.exit(os.EX_USAGE)
+
+
+if __name__ == '__main__':
+	main()

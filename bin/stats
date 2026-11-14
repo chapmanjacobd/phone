@@ -1,0 +1,310 @@
+#!/usr/bin/env python3
+
+"""Print statistics for numbers read from standard input or files."""
+
+from __future__ import annotations
+
+import argparse
+import fileinput
+import math
+import re
+import sys
+from collections import Counter
+from typing import Iterable
+
+
+NUMBER = re.compile(
+    r"^[+-]?(?:(?:\d+(?:\.\d*)?)|(?:\.\d+))(?:[eE][+-]?\d+)?"
+)
+STAT_NAMES = (
+    "avg",
+    "median",
+    "mode",
+    "geo",
+    "harm",
+    "stdev",
+    "min",
+    "max",
+    "sum",
+)
+MAX_MODE_VALUES = 10
+
+
+def positive_int(value: str) -> int:
+    """Parse a one-based positive field number."""
+    number = int(value)
+    if number < 1:
+        raise argparse.ArgumentTypeError("must be at least 1")
+    return number
+
+
+def read_values(files: list[str], key: int, skip_comments: bool) -> list[float]:
+    values: list[float] = []
+    with fileinput.input(files=files or ("-",)) as source:
+        for line in source:
+            if skip_comments and line.lstrip().startswith("#"):
+                continue
+
+            fields = line.split()
+            if len(fields) < key:
+                continue
+            match = NUMBER.match(fields[key - 1])
+            if match is not None:
+                values.append(float(match.group()))
+    return values
+
+
+def geometric_mean(values: list[float]) -> float:
+    if any(value == 0 for value in values):
+        return 0.0
+
+    negative_count = sum(value < 0 for value in values)
+    magnitude = math.exp(
+        math.fsum(math.log(abs(value)) for value in values) / len(values)
+    )
+    if negative_count % 2 == 0:
+        return magnitude
+    if len(values) % 2 == 1:
+        return -magnitude
+    return math.nan
+
+
+def harmonic_mean(values: list[float]) -> float:
+    if any(value == 0 for value in values):
+        return 0.0
+    reciprocal_sum = math.fsum(1 / value for value in values)
+    if reciprocal_sum == 0:
+        return math.nan
+    return len(values) / reciprocal_sum
+
+
+def calculate(values: list[float]) -> dict[str, object]:
+    count = len(values)
+    total = math.fsum(values)
+    average = total / count
+    variance = math.fsum((value - average) ** 2 for value in values) / count
+    ordered = sorted(values)
+
+    counts = Counter(values)
+    greatest_count = max(counts.values())
+    modes = sorted(
+        value for value, occurrences in counts.items() if occurrences == greatest_count
+    )
+    if len(modes) > MAX_MODE_VALUES:
+        mode: object = [*modes[:MAX_MODE_VALUES], "..."]
+    else:
+        mode = modes[0] if len(modes) == 1 else modes
+
+    return {
+        "avg": average,
+        "median": ordered[(count - 1) // 2]
+        if count % 2
+        else (ordered[count // 2 - 1] + ordered[count // 2]) / 2,
+        "mode": mode,
+        "geo": geometric_mean(values),
+        "harm": harmonic_mean(values),
+        "stdev": math.sqrt(variance),
+        "min": min(values),
+        "max": max(values),
+        "sum": total,
+    }
+
+
+def number_text(value: float) -> str:
+    if math.isfinite(value) and value.is_integer():
+        return str(int(value))
+    return str(value)
+
+
+def stat_text(name: str, value: object, fixed: bool = False) -> str:
+    if name == "mode":
+        if isinstance(value, list):
+            return "(" + ", ".join(
+                item if isinstance(item, str) else number_text(item)
+                for item in value
+            ) + ")"
+        return number_text(value)
+    if fixed:
+        return f"{value:.6f}"
+    return number_text(value)
+
+
+def selected_stats(args: argparse.Namespace) -> tuple[set[str], bool]:
+    """Return selected names and whether the selection was implicit."""
+    explicit = {
+        name
+        for name in STAT_NAMES
+        if getattr(args, name, False)
+    }
+    all_output = (
+        args.verbose
+        or args.shell
+        or args.delim is not None
+        or args.newline
+        or args.space
+        or args.tab
+        or not explicit
+    )
+    if all_output:
+        return set(STAT_NAMES), not explicit
+
+    if args.sum and len(explicit) > 1:
+        explicit.add("avg")
+    if args.plus or args.minus:
+        return {"avg", "stdev"}, False
+    return explicit, False
+
+
+def print_labeled(stats: dict[str, object], names: Iterable[str]) -> None:
+    labels = {
+        "avg": "Arithmetic Mean",
+        "median": "Median",
+        "mode": "Mode",
+        "geo": "Geometric Mean",
+        "harm": "Harmonic Mean",
+        "stdev": "Standard Deviation",
+        "min": "Min",
+        "max": "Max",
+        "sum": "Sum",
+    }
+    widths = {
+        "avg": 19,
+        "median": 19,
+        "mode": 19,
+        "geo": 19,
+        "harm": 19,
+        "stdev": 19,
+        "min": 19,
+        "max": 19,
+        "sum": 19,
+    }
+    for name in names:
+        fixed = name not in {"mode", "min", "max", "sum"}
+        print(f"{labels[name] + ':':<{widths[name]}} {stat_text(name, stats[name], fixed)}")
+
+
+def shell_value(name: str, value: object) -> str:
+    return "'" + stat_text(name, value, name not in {"mode", "min", "max", "sum"}) + "'"
+
+
+def print_shell(stats: dict[str, object], names: Iterable[str]) -> None:
+    variables = {
+        "avg": "AVG",
+        "median": "MED",
+        "mode": "MODE",
+        "geo": "GEO",
+        "harm": "HAR",
+        "stdev": "STD",
+        "min": "MIN",
+        "max": "MAX",
+        "sum": "SUM",
+    }
+    selected = list(names)
+    for name in selected:
+        print(f"{variables[name]}={shell_value(name, stats[name])};")
+    print("export " + " ".join(variables[name] for name in selected))
+
+
+def delimiter(args: argparse.Namespace) -> str | None:
+    if args.delim is not None:
+        return args.delim
+    if args.newline:
+        return "\n"
+    if args.tab:
+        return "\t"
+    if args.space:
+        return " "
+    return None
+
+
+def print_machine(
+    stats: dict[str, object], names: Iterable[str], separator: str
+) -> None:
+    print(separator.join(stat_text(name, stats[name], name not in {"mode", "min", "max", "sum"}) for name in names))
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="Print statistics for numbers from stdin or files.",
+        add_help=False,
+    )
+    parser.add_argument("files", nargs="*", help="input files (default: stdin)")
+    parser.add_argument("-a", "--add", "--sum", dest="sum", action="store_true",
+                        help="show only the sum unless another statistic is selected")
+    parser.add_argument("--avg", "--average", action="store_true",
+                        help="show only the arithmetic mean")
+    parser.add_argument("-b", "--bourne", "--shell", dest="shell", action="store_true",
+                        help="output shell variables")
+    parser.add_argument("-c", "--comments", action="store_true",
+                        help="skip lines whose first non-space character is #")
+    parser.add_argument("-d", "--delim", "--delimiter", "--delimeter",
+                        help="delimit machine-readable output")
+    parser.add_argument("-g", "--geometric", "--geometric-mean", dest="geo",
+                        action="store_true", help="show only the geometric mean")
+    parser.add_argument("-h", "--harmean", "--harmmean", "--harmonic",
+                        dest="harm", action="store_true",
+                        help="show only the harmonic mean")
+    parser.add_argument("--help", action="help", help="show this help message")
+    parser.add_argument("-k", "--key", "--field", type=positive_int, default=1,
+                        help="one-based input field to calculate (default: 1)")
+    parser.add_argument("-m", "--median", action="store_true",
+                        help="show only the median")
+    parser.add_argument("-M", "--mode", action="store_true",
+                        help="show only the mode(s)")
+    parser.add_argument("-n", "--newline", "--line", action="store_true",
+                        help="use a newline as the output delimiter")
+    parser.add_argument("-s", "--stdev", "--stddev", "--std-dev",
+                        dest="stdev", action="store_true",
+                        help="show only the population standard deviation")
+    parser.add_argument("-S", "--space", action="store_true",
+                        help="use a space as the output delimiter")
+    parser.add_argument("-t", "--tab", action="store_true",
+                        help="use a tab as the output delimiter")
+    parser.add_argument("-v", "--verbose", action="store_true",
+                        help="show all statistics")
+    parser.add_argument("-x", "--max", "--min", "--maximum", "--minimum",
+                        dest="min", action="store_true",
+                        help="show minimum and maximum")
+    parser.add_argument("--plus", action="store_true",
+                        help="show mean plus standard deviation")
+    parser.add_argument("--minus", action="store_true",
+                        help="show mean minus standard deviation")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if args.plus and args.minus:
+        parser.error("--plus and --minus cannot be used together")
+
+    values = read_values(args.files, args.key, args.comments)
+    if not values:
+        print("stats: no numeric values found", file=sys.stderr)
+        return 1
+
+    stats = calculate(values)
+    names, implicit = selected_stats(args)
+    if args.plus or args.minus:
+        result = stats["avg"] + stats["stdev"] if args.plus else stats["avg"] - stats["stdev"]
+        print(f"{result:.6f}")
+        return 0
+
+    if args.shell:
+        print_shell(stats, (name for name in STAT_NAMES if name in names))
+        return 0
+
+    output_delimiter = delimiter(args)
+    if output_delimiter is not None:
+        print_machine(stats, (name for name in STAT_NAMES if name in names), output_delimiter)
+    elif implicit or args.verbose:
+        print_labeled(stats, (name for name in STAT_NAMES if name in names))
+    else:
+        for name in STAT_NAMES:
+            if name in names:
+                print(stat_text(name, stats[name], name not in {"mode", "min", "max", "sum"}))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
