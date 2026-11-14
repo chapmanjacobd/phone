@@ -1,5 +1,5 @@
 function gitignore
-    echo "$argv" | cat - .gitignore | sponge .gitignore
+    echo "$argv" | tee -a .gitignore
     if confirm 'git reset?'
         git reset -- :/"$argv"
         if confirm 'git rm --cached; git commit?'
