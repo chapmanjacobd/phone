@@ -181,4 +181,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /.local/share/yt_archive.txt
-.parallel/tmp/
+/.parallel/tmp/
+/.ssh/config.local
